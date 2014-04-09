@@ -13,15 +13,6 @@ class WorkController < ApplicationController
 	def required_params_method_for_creating_a_work_record
 		params.require(:work).permit(:what)
 	end	
-		
-	
-	
-	
-	
-	
-	
-.>
-	
 	
 	
 end
