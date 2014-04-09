@@ -8,9 +8,6 @@ group :production do
 	gem 'rails_12factor'
 end
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # HAML gem for Templating
 gem 'haml'
 
