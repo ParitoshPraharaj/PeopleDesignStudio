@@ -9,7 +9,7 @@ group :production do
 end
 
 group :development do
-	gem 'sqlite3'
+	#gem 'sqlite3'
 end
 
 # HAML gem for Templating
@@ -45,7 +45,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
