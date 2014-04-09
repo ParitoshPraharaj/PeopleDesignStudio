@@ -1,0 +1,11 @@
+=form_for :user, url: users_path do |objUser|
+	.form-group
+		=objUser.label :email, class: "border-yellow"
+		=objUser.text_field :email, class: "controls"
+			
+	.form-group
+		=objUser.label :password, class: "border-yellow"
+		=objUser.password_field :password, class: "controls"
+		
+	=objUser.submit 'Save'
+end

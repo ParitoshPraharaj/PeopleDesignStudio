@@ -1,0 +1,11 @@
+=form_for :worlds, url: worlds_path do |objWorld|
+	.form-group
+		=objWorld.label :email
+		=objWorld.text_field :email, class: "controls"
+			
+	.form-group
+		=objWorld.label :password
+		=objWorld.text_field :password, class: "controls"
+		
+	=objWorld.submit 'Save'
+end

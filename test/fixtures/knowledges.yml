@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Knowledge_Id: 1
+  World_Id: 1
+
+two:
+  Knowledge_Id: 1
+  World_Id: 1

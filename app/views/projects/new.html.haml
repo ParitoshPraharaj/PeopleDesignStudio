@@ -1,0 +1,97 @@
+#lets_get_started
+	%p#welcome_to_our_studio
+		Hey, we are a design studio. We make websites, web apps and things that make the web a 
+		better place
+	%h2#lets_start.sit-center
+		Let&rsquo;s get started
+	.line_red				
+	#the_design_studio_form
+		= form_for :project, url: projects_path do |objProject|
+			.form-group.thoughts_on_your_website_label
+				.row
+					.col-md-10.margin-left-two-hundreds
+						%div
+							%p.our_label
+								%span.circle.background_yellow 1
+								Your thoughts on your 
+								%span.border_three_pixels_red website,
+								What do you want your website to contain?
+								= objProject.label :project_description, class: "hidden"
+				
+			.form-group.thoughts_on_your_website_box				
+				.row	
+					.col-md-7.margin-left-four-hundreds.margin-left-thirty-seven-hundreds
+						= objProject.text_area :project_description, class: "controls"
+					
+			.form-group.labels_for_people_name_and_email
+				.row
+					.col-md-5.margin-left-two-hundreds.your_name						
+						%div
+							%p.our_label
+								%span.circle.background_yellow 2 
+								Your 
+								%span.border_three_pixels_blue Name
+								= objProject.fields_for :people do |objPeople|		
+									= objPeople.label :name, "Your name:", class: "hidden"
+				
+					.col-md-5.your_email
+						%div.margin-left-eleven-hundreds
+							%p.our_label
+								%span.circle.background_yellow 3
+								Your
+								%span.border_three_pixels_red Email
+								= objProject.fields_for :people do |objPeople|		
+									= objPeople.label :email, "Your email:", class: "hidden"
+							
+			.form-group.boxes_for_people_name_and_email				
+				.row			
+					.col-md-4.your_name.margin-left-three-hundreds
+						= objProject.fields_for :people do |objPeople|
+							= objPeople.text_field :name, class: "controls margin-left-minus-six-hundreds"
+							
+					.col-md-4.your_email
+						=objProject.fields_for :people do |objPeople|
+							= objPeople.text_field :email,
+							class: "controls margin-left-thirty-hundreds"
+					
+			.form-group.label_and_box_for_business_name
+				.row	
+					.col-md-5.label_for_business_name
+						%p.our_label
+							%span.circle.background_yellow 4
+							Your
+							%span.border_three_pixels_green Business Name
+							= objProject.label :project_name, "Your business name:", class: "hidden"
+				.row
+					.col-md-5.box_for_business_name.margin-left-five-hundreds
+						= objProject.text_field :project_name, class: "controls"						
+						
+			.row
+				.col-md-5.margin-left-five-hundreds
+					%h2	
+						= objProject.submit "Lets begin the work", id: "our-button"
+					
+	#your_website_its_us_now
+		%p
+			We will start making your website in a few hours 
+			%span#the_clock
+				=image_tag "Circle.png", alt: "Few Hours"
+			&#46;
+			We Hope, both of us will have a great time	working together.
+	
+		#relationship_shapes
+			.circle.pieces.background_yellow.pull-left
+			
+			.square.pieces.background_red.pull-right
+			
+		%h2#lets_work_towards_a_great_website
+			Lets work towards a great website.
+			
+		#the_journey_begins
+			.content_holder_box
+				.box
+					=image_tag "Square.png", alt: "Square"
+				.box
+					=image_tag "Square.png", alt: "Square"
+				.box
+					=image_tag "Square.png", alt: "Square"

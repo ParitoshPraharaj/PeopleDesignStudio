@@ -1,0 +1,135 @@
+/* Fonts */
+
+$font-name: 'Courier New', Courier, monospace
+$font-size: 20px
+$line-height: $font-size * 1.5
+
+/* Colors */
+
+$white: #fff
+
+$red: #ff0000
+
+$green: #00ff00
+
+$blue: #0000ff
+
+$yellow: #fffa0e
+
+$black: #000
+
+$brown: #a72d2d
+
+$lemon: #f2ef09
+
+$dodger-blue: #4395fa
+
+$navy-blue: #005DFF
+
+$orange-red: #FF4500
+
+$mountain-meadow: #21B37A
+
+$pink: #FFC0CB
+
+$alizarin: #DD3030
+
+/* Widths */
+
+$one-pixel: 1px
+
+$two-pixels: 2px
+
+/* Mixins */
+@mixin width($measurement-in-words, $measurement-in-numbers)
+	.width-#{$measurement-in-words}
+		width: $measurement-in-numbers
+		margin: 0 auto
+
+
+@mixin font-and-line-height($font-size) //Mixin for font-size and line-height
+	font-size: $font-size
+	line-height: $font-size * 1.5
+
+@mixin Link-Home-Page
+	color: #dd3030
+	text-decoration: none
+	border-bottom: 2px solid #00a4ff	
+
+@mixin box-width-height-and-margin($width) //Mixin for div widths
+	width: $width
+	height: auto
+	margin: 0 auto
+
+@mixin border-bottom($height,$color) //Mixin for bottom border
+	border-bottom: $height solid $color
+
+@mixin padding ($padding-top: 0%, $padding-right: 0%, $padding-bottom: 0%, $padding-left: 0%)
+	padding: $padding-top $padding-right $padding-bottom $padding-left 
+	
+@mixin margin($margin-top: 0%, $margin-right: 0%, $margin-bottom: 0%, $margin-left: 0%)
+	margin: $margin-top $margin-right $margin-bottom $margin-left
+
+@mixin border($border-top: 0px, $border-right: 0px, $border-bottom: 0px, $border-left: 0px, $type: solid, $color: #ff0000)
+	border-top: $border-top $type $color
+	border-right: $border-right $type $color
+	border-bottom: $border-bottom $type $color
+	border-left: $border-left $type $color	
+
+@mixin border-radius($width)
+	border-radius: $width
+
+@mixin letter-spacing($pixel-width)
+	letter-spacing: $pixel-width
+
+@mixin button
+	background-color: $dodger-blue
+	color: $white
+	@include padding(0.3%, 1.5%, 0.3%, 1.5%)
+	@include border-radius(2px)
+
+@mixin link($color: #fffa0e, $color-text-underscore: #fff)
+	color: $color
+	text-underscore: 0px solid $color-text-underscore
+
+@mixin text-fields-of-a-form
+	font: normal 20px/24px $font-name
+	color: #0000ff
+	display: block
+	width: 100%
+	height: 40px
+	/* Padding */
+	@include padding(1% 2%)
+	vertical-align: middle
+	@include border(0px, 0px, 1px, 0px, dashed, $dodger-blue)	
+	
+@mixin input-form-submit
+	background: none
+	border: none	
+	display: block
+	margin: 0 auto
+	color: #eeec0f
+	font-size: 25px
+	font-weight: bold
+	letter-spacing: 1px
+	@include border(0px, 0px, 1px, 0px, solid, #4395fa)
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
