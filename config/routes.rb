@@ -1,7 +1,11 @@
 TheDesignStudio::Application.routes.draw do
  
+  #Custom GET Requests
+  get 'notes/:title' => 'notes#show'
+  get 'notes/edit/:title' => 'notes#edit'
+    
   get "feedback_on_ideas/new"
-  get "feedback_on_ideas/create"
+  post "feedback_on_ideas/create"
   get "feedback_on_ideas/show"
   get "ideas/new"
   get "ideas/create"
@@ -30,9 +34,6 @@ TheDesignStudio::Application.routes.draw do
   get "lets-work-together", to: "worlds#new", as: 'sign_up'
   get 'lets-start-again', to: 'worlds#lets_start_again'
   post 'sign_in', to: 'worlds#sign_in'
-  
-  get 'notes/:title' => 'notes#show'
-  get 'notes/edit/:title' => 'notes#edit'
   
   get 'people/:email' => 'people#show'
   

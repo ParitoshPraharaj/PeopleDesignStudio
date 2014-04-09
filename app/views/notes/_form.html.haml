@@ -1,5 +1,6 @@
 #notes-form
-	=form_for :note, url: notes_path do |objNote|
+	=form_for :notes, url: notes_path do |objNote|
+		=objNote.label 
 		=objNote.text_field :title, placeholder: "Note's Name", class: "controls border-bottom-dashed-blue", id: "note-title"
 		
 		.row

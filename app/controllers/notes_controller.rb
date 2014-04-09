@@ -4,7 +4,7 @@ class NotesController < ApplicationController
   
   private
   
-  def fields_for_creating_a_form
+  def fields_for_creating_a_note
 	params.require(:notes).permit(:title, :content)  
   end
   
@@ -12,7 +12,6 @@ class NotesController < ApplicationController
   
   def index
 	@notes = Note.all
-	@world = World.where(email: 'parirakesh@gmail.com')
   end
   
   def new
@@ -20,19 +19,20 @@ class NotesController < ApplicationController
   end
 	
   def create
-	@note = Note.new(fields_for_creating_form)
-	flash[:message] = 'The note has been 
-	saved.' if @note.save
+	@notes = Note.all
+	@note = Note.new(fields_for_creating_a_note)
+	flash[:message] = 'Hey, your Note has been created. Get Going now.' if @note.save
 	redirect_to(@note)
   end
 
   def edit
+	@notes = Note.all
 	@note = Note.find(params[:title])
   end
 
   def update
-	@note = Note.update(fields_for_creating_form)
-	flash[:message] = 'The note has been updated.' if @note.update
+	@note = Note.update(params([:notes])).require(:content)
+	flash[:message] = 'Hey, you added a few lines to your Note.' if @note.update
   end
 
   def show
