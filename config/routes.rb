@@ -29,9 +29,9 @@ TheDesignStudio::Application.routes.draw do
     
   #Named Routes
 	
-  get "lets-get-started", to: "projects#new", as: "lets_get_started"
-  get "lets-begin-work", to: "projects#lets_begin_work", as: "lets_begin_work"
-  get "lets-work-together", to: "worlds#new", as: 'sign_up'
+  get "lets-get-started", to: "people#lets_get_started", as: "lets_get_started"
+  get "lets-begin-work", to: "home#lets_begin_work", as: "lets_begin_work"
+  get "lets-work-together", to: "people#signup", as: 'sign_up'
   get 'lets-start-again', to: 'worlds#lets_start_again'
   post 'sign_in', to: 'worlds#sign_in'
   
