@@ -1,8 +1,9 @@
 class Projects < ActiveRecord::Base
-	belongs_to :world
+	belongs_to :people
 	has_many :work
 	has_many :ideas
-	accepts_nested_attributes_for :people
+	
+	
 	
 	def finish_a_project
 		@hours = 10
