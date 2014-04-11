@@ -9,7 +9,7 @@
 		started
 	.line_red				
 	#the_design_studio_form
-		= form_for :project do |objProject|
+		= form_for :people, url: people_path do |objPeople|
 			.form-group.thoughts_on_your_website_label
 				.row
 					.col-md-10.margin-left-two-hundreds
@@ -19,7 +19,8 @@
 								Your thoughts on your 
 								%span.border_three_pixels_red website,
 								What do you want your website to contain?
-								= objProject.label :name, "%p	Your thoughts on your	%span.border-red website, What do you want your website to contain?", class: "hidden"
+								= objPeople.fields_for :projects do |objProject|
+									= objProject.label :name, "%p	Your thoughts on your	%span.border-red website, What do you want your website to contain?", class: "hidden"
 							//%p
 						//%div
 					//.col-md-10
@@ -28,7 +29,8 @@
 			.form-group.thoughts_on_your_website_box				
 				.row	
 					.col-md-7.margin-left-four-hundreds.margin-left-thirty-seven-hundreds
-						= objProject.text_area :name, class: "controls"
+						= objPeople.fields_for :projects do |objProject|
+							= objProject.text_area :description, class: "controls"
 					
 			.form-group.labels_for_people_name_and_email
 				.row
@@ -37,28 +39,26 @@
 							%p.our_label
 								%span.circle.background_yellow 2 
 								Your 
-								%span.border_three_pixels_blue Name
-								= objProject.fields_for :people do |objPeople|		
-									= objPeople.label :name, "Your name:", class: "hidden"
+								%span.border_three_pixels_blue
+								Name
+								= objPeople.label :name, "Your name:", class: "hidden"
 				
 					.col-md-5.your_email
 						%div.margin-left-eleven-hundreds
 							%p.our_label
 								%span.circle.background_yellow 3
 								Your
-								%span.border_three_pixels_red Email
-								= objProject.fields_for :people do |objPeople|		
-									= objPeople.label :email, "Your email:", class: "hidden"
+								%span.border_three_pixels_red
+								Email	
+								= objPeople.label :email, "Your email:", class: "hidden"
 							
 			.form-group.boxes_for_people_name_and_email				
 				.row			
 					.col-md-4.your_name.margin-left-three-hundreds
-						= objProject.fields_for :people do |objPeople|
-							= objPeople.text_field :name, class: "controls margin_left_minus_six_hundreds"
+						= objPeople.text_field :name, class: "controls margin_left_minus_six_hundreds"
 							
 					.col-md-4.your_email
-						=objProject.fields_for :people do |objPeople|
-							= objPeople.text_field :email,
+						= objPeople.text_field :email,
 							class: "controls margin_left_thirty_hundreds"
 					
 			.form-group.label_and_box_for_business_name
@@ -68,15 +68,17 @@
 							%span.circle.background_yellow 4
 							Your
 							%span.border_three_pixels_green Business Name
-							= objProject.label :name, "Your business name:", class: "hidden"
+							= objPeople.fields_for :projects do |objProject|
+								= objProject.label :name, "Your business name:", class: "hidden"
 				.row
 					.col-md-5.box_for_business_name.margin-left-five-hundreds
-						= objProject.text_field :name, class: "controls"						
+						= objPeople.fields_for :projects do |objProject|
+							= objProject.text_field :name, class: "controls"						
 						
 			.row
 				.col-md-5.margin-left-five-hundreds
 					%h2	
-						= objProject.submit "Lets begin the work", id: "our-button"
+						= objPeople.submit "Lets begin the work", id: "our-button"
 					
 	#your_website_its_us_now
 		%p

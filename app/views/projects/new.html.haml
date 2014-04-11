@@ -16,12 +16,12 @@
 								Your thoughts on your 
 								%span.border_three_pixels_red website,
 								What do you want your website to contain?
-								= objProject.label :project_description, class: "hidden"
+								= objProject.label :description, class: "hidden"
 				
 			.form-group.thoughts_on_your_website_box				
 				.row	
 					.col-md-7.margin-left-four-hundreds.margin-left-thirty-seven-hundreds
-						= objProject.text_area :project_description, class: "controls"
+						= objProject.text_area :description, class: "controls"
 					
 			.form-group.labels_for_people_name_and_email
 				.row
@@ -61,10 +61,10 @@
 							%span.circle.background_yellow 4
 							Your
 							%span.border_three_pixels_green Business Name
-							= objProject.label :project_name, "Your business name:", class: "hidden"
+							= objProject.label :name, "Your business name:", class: "hidden"
 				.row
 					.col-md-5.box_for_business_name.margin-left-five-hundreds
-						= objProject.text_field :project_name, class: "controls"						
+						= objProject.text_field :name, class: "controls"						
 						
 			.row
 				.col-md-5.margin-left-five-hundreds

@@ -1,20 +1,23 @@
-production: 
-  adapter: postgresql
-  encoding: unicode
-  database: Design_Studio_Production
-  pool: 5
-  password:
-	
+#SQLite Database for development  
 development:
   adapter: postgresql
-  encoding: unicode
-  database: Design_Studio_Development
+  database: People_Design_Studio_Development
   pool: 5
-  password:
+  timeout: 5000
 
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
 test:
   adapter: postgresql
-  encoding: unicode
-  database: Design_Studio_Testing
+  database: People_Design_Studio_Test
   pool: 5
-  password:
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  database: d9mmbmc4qf1sv8
+  user: qtoxgzubkeznmt
+  password: L2FMV2n3EqjBfEopvQlXTbZp-q
+  pool: 5
+  timeout: 5000
