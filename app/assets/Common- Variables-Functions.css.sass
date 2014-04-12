@@ -1,0 +1,551 @@
+@import "bootstrap"
+
+@import Common-Variables-Functions
+
+body  
+	color: $black
+	font: normal 20px/30px $font-name
+
+p
+	@include font-and-line-height(20px)
+
+h1, h2, h3, h4, h5, h6  
+	font-family: 'Courier New', Courier, monospace
+	margin: 0
+
+/* Fonts */
+/* [Letter Spacing ] */
+h3.better-spacing
+	@include letter-spacing($one-pixel)
+ 
+.main-link //A Custom link over-riding button behaviour
+	@include link
+
+#our-button
+	@include button
+		
+/* Boxes */
+div
+	@include box-width-height-and-margin(100%)
+
+	
+.eighty_percent_width
+	@include box-width-height-and-margin(80%)
+
+@include width(thirty-percent, 30%)
+	
+/* Twitter Bootstrap's Column Classes Re-Named */
+.margin-left-zero-hundred
+	margin-left: 0%
+.margin-left-one-hundreds
+	margin-left: 8.33333333%
+.margin-left-two-hundreds
+	margin-left:  16.66666667%
+.margin-left-three-hundreds
+	margin-left: 25%
+.margin-left-four-hundreds
+	margin-left: 33.33333333%
+.margin-left-five-hundreds
+	margin-left: 41.66666667%
+.margin-left-six-hundreds
+	margin-left: 50%
+.margin-left-seven-hundreds
+	margin-left: 58.333333333%
+.margin-left-eight-hundreds
+	margin-left: 66.6666666667%
+.margin-left-nine-hundreds
+	margin-left: 75%
+.margin-left-ten-hundreds
+	margin-left: 83.333333333%
+.margin-left-eleven-hundreds
+	margin-left: 91.666666667%
+.margin-left-twelve-hundreds
+	margin-left: 100%
+
+/* Margins */
+	
+/* Bottom Margins */
+.margin-bottom-three-percent
+	margin-bottom: 3%
+
+.margin-bottom-four-percent
+	margin-bottom: 4%
+ 
+.margin-bottom-five-percent
+	margin-bottom: 5%
+
+.margin-bottom-six-percent
+	margin-bottom: 6%
+	
+.margin-bottom-ten-percent
+	margin-bottom: 10%
+	
+.margin-bottom-twenty-percent
+	margin-bottom: 20%
+
+/* Positive Margins */
+
+.margin-left-eleven-hundreds
+	margin-left: 11%
+	
+.margin-left-thirteen-hundreds
+	margin-left: 13%
+	
+.margin-left-sixteen-hundreds	
+	margin-left: 16.666667%
+
+.margin-left-thirty-hundreds
+	margin-left: 30%	
+
+.margin-left-thirty-seven-hundreds
+	margin-left: 37.666667%
+
+/* Negative Margins */
+	
+.margin_left_minus_six_hundreds
+	margin-left: -6%
+	
+/* Common CSS properties turned into Classes for better short interaction between HTML and CSS */
+.sit-bottom  
+	clear: both
+	
+.sit-center  
+	text-align: center
+	
+.sit-vertical
+	line-height: 40px
+	
+.text_bold
+	font-weight: bold
+	
+/* Text Boxes, Labels and Form Inputs */	
+label
+	font-weight: normal
+	
+.controls
+	@include text-fields-of-a-form
+	
+textarea.controls
+	height: 290px
+	
+input[ type=submit ]
+	@include input-form-submit
+	
+/* Colors */
+
+.red 
+	color: #ff0000
+
+.green
+	color: #00ff00
+
+.blue
+	color: #0000ff
+	
+.yellow
+	color: #fff0ae
+	
+.copy-red  
+	color: #ff0000
+ 
+.copy-lightred  
+	color: #ff7171
+ 
+.copy-grey  
+	color: #b7b7b7
+ 
+.copy-yellow
+	color: #fff0ae
+
+.copy-dodger-blue
+	color: $dodger-blue
+
+.copy-navy-blue
+	color: $navy-blue
+
+.copy-blue
+	color: $blue
+
+.copy-orange-red
+	color: $orange-red
+	
+.copy-mountain-meadow
+	color: $mountain-meadow
+
+.copy-pink
+	color: $pink
+
+.copy-green
+	color: $green
+
+.copy-free-speech-red
+	color: $free-speech-red
+
+.copy-deep-sky-blue
+	color: $deep-sky-blue
+	
+.background-red  
+	background-color: #ff0000
+ 
+.background-green  
+	background-color: #00ff00
+ 
+.background-blue  
+	background-color: #0000ff
+ 
+.background-yellow  
+	background-color: #fffa0e
+ 
+.border-dashed-blue
+	@include border(1px, 1px, 1px, 1px, dashed, $dodger-blue)
+ 
+.border-bottom-dashed-blue
+	@include border(0px, 0px, 1px, 0px, dashed, $dodger-blue)
+	
+.border_four_pixels_red  
+	border-bottom: 4px solid #ff0000
+ 
+.border_four_pixels_green  
+	border-bottom: 4px solid #00ff00
+ 
+.border_four_pixels_blue	
+	border-bottom: 4px solid #0000ff
+	
+.border_four_pixels_yellow  
+	border-bottom: 4px solid #fffa0e
+
+.border_three_pixels_red  
+	border-bottom: 3px solid #ff0000
+ 
+.border_three_pixels_green  
+	border-bottom: 3px solid #00ff00
+ 
+.border_three_pixels_blue	
+	border-bottom: 3px solid #0000ff
+	
+.border_three_pixels_yellow  
+	border-bottom: 3px solid #fffa0e
+	
+.triangle  
+	width: 0
+	height: 0
+	border-right: 20px solid transparent
+	border-bottom: 40px solid #00ff00
+	border-left: 20px solid transparent
+ 
+.circle  
+	width: 40px
+	height: 40px
+	border-radius: 100%
+ 
+.square  
+	width: 40px
+	height: 40px
+ 
+/* Container Classes */
+.content_holder_box  
+	position: relative
+ 
+.line
+	min-height: 4px
+	border-radius: 2px
+ 
+.line_red  
+	width: 21.333%
+	margin: 0 auto 5%
+	min-height: 4px
+	background-color: #ff0000
+	border-radius: 2px
+ 
+#home  
+	width: 100%
+	position: relative
+ 	
+#logo  
+	width: 100%
+	margin: 1% auto 2%
+	
+#what_we_do  
+	width: 100%
+	margin: 0 auto 3%	
+	text-align: center
+ 		
+#our-websites  
+	text-align: center
+	
+	.col-md-5
+		box-sizing: content-box 
+		
+	.background-yellow
+		background-color: $yellow
+		box-sizing: content-box
+		@include margin(0%, 0%, 6%, 0%)
+	 
+	.background-red
+		background-color: $red
+		box-sizing: content-box
+		@include margin(0%, 0%, 6%, 0%)
+	 
+	h1 
+		padding: 27% 0%
+	
+	
+#how_much_you_pay  
+	width: 83.2%
+	margin: 0 0 5% 8.33333333333334%
+	text-align: center	
+ 	
+#lets_start_your_website  
+	margin-bottom: 8%
+	text-align: center
+	letter-spacing: 2px
+ 
+h2#we_make_business_personal_and_hobby_websites  
+	margin: 0 0 4% 8.33% 
+	text-align: center
+ 
+#we_make_all_websites_box p  
+	font-size: 23px
+	line-height: 34.5px
+	margin-left: 8.33% 
+ 
+#we_make_all_websites_box  
+	margin-bottom: 10%
+ 
+#shapes  
+	margin-bottom: 9%
+ 
+h2#we_love_designing_copywriting_and_programming_websites
+	margin-bottom: 4%
+
+#whats_happening_from_around_the_world
+	width: 80%
+	margin: 0 auto	
+
+/* CSS Rules for the Home Page */
+
+a
+	color: #dd3030
+	text-decoration: none
+	border-bottom: 2px solid #00a4ff
+	
+
+/* CSS Rules for the Project Page */
+
+#lets-start-work
+	h3
+		margin-bottom: 2%
+		
+	textarea#work_what
+		height: 60px
+		color: #0081ff
+		@include margin(0px, 0px, 2%, 0px)
+		@include border(1px, 1px, 1px, 1px, dashed, $dodger-blue)		
+
+/* CSS Rules for Work Page */
+#lets-start-work
+	h3
+		margin-bottom: 2%
+		
+	textarea#work_what
+		height: 60px
+		color: #0081ff
+		@include margin(0px, 0px, 2%, 0px)
+		@include border(1px, 1px, 1px, 1px, dashed, $dodger-blue)
+		
+/* Styles for the Website Collection Page */
+#lets_get_started 
+	@include margin(-1%,0,0,0)
+	
+p#welcome_to_our_studio  
+	font-size: 23px
+	line-height: 34.5px
+	margin: 0% 0 1% 8.33%
+ 
+h2 #lets_start
+	margin-bottom: 1%
+	letter-spacing: 2px 
+ 
+#lets_get_started .line_red
+	width: 10.33%
+	margin-bottom: 2%	
+
+#the_design_studio_form
+	margin: 0 auto 8%	
+	
+#the_design_studio_form input, textarea
+	@include border(1px, 1px, 1px, 1px, solid, #ff0000)
+	
+#the_design_studio_form .form_group
+	margin-bottom: 2%
+	
+#the_design_studio_form .circle
+	width: 50px
+	height: 50px
+	padding: 3% 
+
+#the_design_studio_form .our_label
+	font-weight: bold
+	letter-spacing: 1px
+
+#the_design_studio_form .thoughts_on_your_website_label 
+	margin: 0px 0px 10px	
+	
+#the_design_studio_form .thoughts_on_your_website_label .circle
+	padding: 2%
+	
+#the_design_studio_form .thoughts_on_your_website_label p
+	letter-spacing: -1px
+
+#the_design_studio_form .thoughts_on_your_website_box	
+	margin-bottom: 3%	
+
+#the_design_studio_form .margin_left_sixteen_hundreds
+	margin-left: 16.666667%
+
+#the_design_studio_form .labels_for_people_name_and_email
+	@include margin(0, 0, 0, 0)
+
+#the_design_studio_form .boxes_for_people_name_and_email
+	@include margin(0,0,2%,0)
+
+#the_design_studio_form .label_and_box_for_business_name	
+	@include margin(0,0,3%,0)
+	
+#the_design_studio_form .label_for_business_name
+	@include margin(0, 0, 0.2%, 50%)
+
+#your_website_its_us_now
+	margin-bottom: 10%
+	text-align: center	
+	font-weight: bold
+
+#your_website_its_us_now p
+	font-size: 22px
+	font-weight: bold
+	margin-bottom: 2%
+
+#your_website_its_us_now span #the_clock img
+	width: 25%
+	margin-left: -0.5%
+	margin-right: -1%
+
+#relationship_shapes
+	width: 22%
+	margin: 0 auto 8%
+	position: relative
+	
+#relationship_shapes .pieces
+	position: relative
+	padding: 0 15px
+	float: left
+	
+h2#lets_work_towards_a_great_website
+	margin-bottom: 4%
+	font-weight: bold
+	letter-spacing: 1px
+
+#the_journey_begins
+	width: 25%
+	margin: 0 auto
+	position: relative
+
+#the_journey_begins .box
+	width: 33%
+	margin: 0 auto 
+	position: relative
+	float: left
+	padding: 0 15px
+
+h2#your_framework_and_your_servers
+	padding-top: 5%	
+
+h2#your_framework_and_your_servers a
+	font-size: 33px
+
+/* Photos From Around the World */
+
+#pictures_box
+	text-align: center
+#pictures h3
+	margin-bottom: 7%
+#pictures p
+	margin-bottom: 7%
+#pictures  
+	position: relative 
+	list-style: none 
+	overflow: hidden 
+	width: 100% 
+	padding: 0 
+	margin: 0
+#pictures li
+	position: absolute 
+	display: none 
+	width: 100% 
+	left: 0 
+	top: 0
+#pictures li:first-child  
+	position: relative 
+	display: block 
+	float: left
+#pictures img
+	width: 100% 
+	height: auto
+	margin-bottom: 7%
+	display: block 
+	float: left 
+	border: 0
+
+/* Styles for Notes Page */
+#make-a-note
+	margin-top: -2%
+	#notes-form
+		input#note-title
+			width: 55%
+			margin: 0 auto 10%
+
+		textarea#note-description
+			height: 55px
+			@include border(0px, 1px, 1px, 1px, dashed, $dodger-blue)
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
