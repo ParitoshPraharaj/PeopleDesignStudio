@@ -13,7 +13,7 @@ class PeopleController < ApplicationController
 	end
 	
 	def lets_get_started
-	
+		@people = People.projects.build
 	end
 	
 	def create
@@ -46,7 +46,7 @@ class PeopleController < ApplicationController
 	# Method for Saving Projects
 	
 	def required_parameters_for_saving_a_project_through_the_form
-		params.require(:people).permit(:name, :email, :projects_attributes)
+		params.require(:people).permit(:name, :email, projects_attributes: [:id, :name, :description ])
 	end
 
 	
