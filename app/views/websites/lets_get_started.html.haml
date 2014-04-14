@@ -1,21 +1,29 @@
 #lets_get_started
 	%p#welcome_to_our_studio
-		Hey, we are a design studio. We make websites, web apps and all sorts of things that make the web a lot
-		better place. We love designing websites.
-	%h2#lets_start.sit_center
+		Hey, we are a 
+		%span.copy-red Design Studio.
+		We make 
+		%span.copy-red Websites,
+		%span.copy-medium-spring-green	Web Apps 
+		and 
+		%span.copy-electric-indigo Things 
+		that make the Web a lot
+		Better
+		%span.copy-red	Place.
+	%h2#lets_start.sit-center
 		Let&rsquo;s 
 		%span.border-bottom-red
-		get 
-		started
+		Get 
+		Started
 	.line_red				
-	#the_design_studio_form
+	#the-design-studio-form
 		= form_for :website, url: websites_path do |objWebsite|
 			.form-group.thoughts_on_your_website_label
 				.row
 					.col-md-10.margin-left-two-hundreds
 						%div
 							%p.our_label
-								%span.circle.background_yellow 1
+								%span.circle.background-yellow 1
 								Your thoughts on your 
 								%span.border_three_pixels_red website,
 								What do you want your website to contain?
@@ -35,19 +43,17 @@
 					.col-md-5.margin-left-two-hundreds.your_name						
 						%div
 							%p.our_label
-								%span.circle.background_yellow 2 
+								%span.circle.background-yellow 2 
 								Your 
-								%span.border_three_pixels_blue
-								Name
+								%span.border_three_pixels_blue Name
 								= objWebsite.label :people_name, "Your name:", class: "hidden"
 				
 					.col-md-5.your_email
 						%div.margin-left-eleven-hundreds
 							%p.our_label
-								%span.circle.background_yellow 3
+								%span.circle.background-yellow 3
 								Your
-								%span.border_three_pixels_red
-								Email	
+								%span.border_three_pixels_red Email
 								= objWebsite.label :people_email, "Your email:", class: "hidden"
 							
 			.form-group.boxes_for_people_name_and_email				
@@ -63,7 +69,7 @@
 				.row	
 					.col-md-5.label_for_business_name
 						%p.our_label
-							%span.circle.background_yellow 4
+							%span.circle.background-yellow 4
 							Your
 							%span.border_three_pixels_green Business Name
 							= objWebsite.label :website_name, "Your business name:", class: "hidden"
@@ -85,9 +91,9 @@
 			We Hope, both of us will have a great time	working together.
 	
 		#relationship_shapes
-			.circle.pieces.background_yellow.pull-left
+			.circle.pieces.background-yellow.pull-left
 			
-			.square.pieces.background_red.pull-right
+			.square.pieces.background-red.pull-right
 			
 		%h2#lets_work_towards_a_great_website
 			Lets work towards a great website.

@@ -192,6 +192,9 @@ input[ type=submit ]
 
 .copy-genoa
 	color: $genoa
+
+.copy-electric-indigo
+	color: $electric-indigo
 	
 .background-red  
 	background-color: #ff0000
@@ -360,7 +363,6 @@ a
 		height: 60px
 		color: #0081ff
 		@include margin(0px, 0px, 2%, 0px)
-		@include border(1px, 1px, 1px, 1px, dashed, $dodger-blue)
 		
 /* Styles for the Website Collection Page */
 #lets_get_started 
@@ -376,52 +378,56 @@ h2 #lets_start
 	letter-spacing: 2px 
  
 #lets_get_started .line_red
-	width: 10.33%
-	margin-bottom: 2%	
+	width: 12.33%
+	margin: 2% auto 2%
+	min-height: 2px	
 
-#the_design_studio_form
+#the-design-studio-form
 	margin: 0 auto 8%	
 	
-#the_design_studio_form input, textarea
+#the-design-studio-form input, textarea
 	@include border(1px, 1px, 1px, 1px, solid, #ff0000)
 	
-#the_design_studio_form .form_group
+#the-design-studio-form input[type="submit"]
+	border: none
+	
+#the-design-studio-form .form_group
 	margin-bottom: 2%
 	
-#the_design_studio_form .circle
+#the-design-studio-form .circle
 	width: 50px
 	height: 50px
 	padding: 3% 
 
-#the_design_studio_form .our_label
+#the-design-studio-form .our_label
 	font-weight: bold
 	letter-spacing: 1px
 
-#the_design_studio_form .thoughts_on_your_website_label 
+#the-design-studio-form .thoughts_on_your_website_label 
 	margin: 0px 0px 10px	
 	
-#the_design_studio_form .thoughts_on_your_website_label .circle
+#the-design-studio-form .thoughts_on_your_website_label .circle
 	padding: 2%
 	
-#the_design_studio_form .thoughts_on_your_website_label p
+#the-design-studio-form .thoughts_on_your_website_label p
 	letter-spacing: -1px
 
-#the_design_studio_form .thoughts_on_your_website_box	
+#the-design-studio-form .thoughts_on_your_website_box	
 	margin-bottom: 3%	
 
-#the_design_studio_form .margin_left_sixteen_hundreds
+#the-design-studio-form .margin_left_sixteen_hundreds
 	margin-left: 16.666667%
 
-#the_design_studio_form .labels_for_people_name_and_email
+#the-design-studio-form .labels_for_people_name_and_email
 	@include margin(0, 0, 0, 0)
 
-#the_design_studio_form .boxes_for_people_name_and_email
+#the-design-studio-form .boxes_for_people_name_and_email
 	@include margin(0,0,2%,0)
 
-#the_design_studio_form .label_and_box_for_business_name	
+#the-design-studio-form .label_and_box_for_business_name	
 	@include margin(0,0,3%,0)
 	
-#the_design_studio_form .label_for_business_name
+#the-design-studio-form .label_for_business_name
 	@include margin(0, 0, 0.2%, 50%)
 
 #your_website_its_us_now
@@ -451,7 +457,6 @@ h2 #lets_start
 	
 h2#lets_work_towards_a_great_website
 	margin-bottom: 4%
-	font-weight: bold
 	letter-spacing: 1px
 
 #the_journey_begins
