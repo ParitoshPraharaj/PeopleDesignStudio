@@ -1,5 +1,6 @@
 class WebsitesController < ApplicationController
   def new
+	
   end
 
   def lets_get_started
@@ -10,7 +11,7 @@ class WebsitesController < ApplicationController
 	@website = Website.create(parameters_for_saving_a_website_from_a_user)
 	
 	if @website.save
-		redirect_to lets_begin_work_path
+		redirect_to lets_begin_work_path(@website)
 	else
 		render lets_get_started
 	end	
@@ -18,7 +19,7 @@ class WebsitesController < ApplicationController
   end
   
   def lets_begin_work
-  
+	
   end
   
   def parameters_for_saving_a_website_from_a_user
