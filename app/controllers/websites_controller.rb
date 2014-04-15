@@ -3,6 +3,10 @@ class WebsitesController < ApplicationController
 	
   end
 
+  def index
+      @websites = Website.all
+  end
+
   def lets_get_started
 	
   end
