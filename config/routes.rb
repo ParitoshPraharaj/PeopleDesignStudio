@@ -34,7 +34,7 @@ TheDesignStudio::Application.routes.draw do
 	
   get "lets-get-started", to: "websites#lets_get_started", as: "lets_get_started"
   get "lets-begin-work", to: "websites#lets_begin_work", as: "lets_begin_work"
-  get "lets-work-together", to: "people#signup", as: 'sign_up'
+  get "lets-work-together", to: "people#lets_work_together", as: 'sign_up'
   get 'lets-start-again', to: 'worlds#lets_start_again'
   post 'sign_in', to: 'worlds#sign_in'
   
