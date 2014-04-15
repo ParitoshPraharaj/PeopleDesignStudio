@@ -26,6 +26,12 @@ class PeopleController < ApplicationController
 		end	
 	end	
 	
+        #Methods for Signing Up and Signing In
+        
+        def lets_work_together
+
+        end
+
 	def signup
 		@people = People.new(fields_for_signup)
 		flash[:success] = "Hey, you just signed up. Lets get started right away working on your website." if @people.save
