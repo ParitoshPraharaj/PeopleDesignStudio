@@ -8,12 +8,13 @@ class WebsitesController < ApplicationController
   end
 
   def create
-	@website = Website.create(parameters_for_saving_a_website_from_a_user)
-	
+	@website = Website.create(parameters_for_saving_the_website_form)
+        logger.info "A Website Saved: @website.atrributes.inspect"
 	if @website.save
-		redirect_to lets_begin_work_path(@website)
+	    redirect_to lets_begin_work_path(@website)
 	else
-		render lets_get_started
+            logger.info "Attributes did not got saved: @website.attributes.inspect"
+            render lets_get_started
 	end	
 	
   end
@@ -22,7 +23,7 @@ class WebsitesController < ApplicationController
 	
   end
   
-  def parameters_for_saving_a_website_from_a_user
+  def parameters_for_saving_the_website_form
 	params.require(:website).permit(:people_name, :people_email, :website_name, :website_description)
   end
   
