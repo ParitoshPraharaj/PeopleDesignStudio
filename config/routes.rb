@@ -1,5 +1,7 @@
 TheDesignStudio::Application.routes.draw do
  
+  get "sessions/sign_in"
+  get "sessions/sign_out"
   get "websites/new"
   get "websites/lets_get_started"
   get "websites/create"
