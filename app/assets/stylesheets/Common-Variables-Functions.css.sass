@@ -137,8 +137,15 @@ $two-pixels: 2px
 	letter-spacing: 1px
 	@include border(0px, 0px, 1px, 0px, solid, #4395fa)
 	
-
-
+@mixin input-placeholders
+	::-webkit-input-placeholder
+		color: $orange-red
+	::-moz-placeholder
+		color: $orange-red
+	:-moz-placeholder
+		color: $orange-red
+	:-ms-input-placeholder
+		color: $orange-red
 
 
 

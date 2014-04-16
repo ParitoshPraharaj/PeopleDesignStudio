@@ -24,9 +24,27 @@
 						%div
 							%p.our_label
 								%span.circle.background-yellow 1
-								Your thoughts on your 
-								%span.border_three_pixels_red website,
-								What do you want your website to contain?
+								Your thoughts on your
+								%span.copy-red.text-bold Website&#44;
+								%span.copy-red.text-bold Why
+								and 
+								%span.copy-golden-yellow.text-bold What
+								do you want your 
+								%span.copy-red Website
+								to be?Just write whatever 
+								%span.copy-orange-red.text-bold Thoughts
+								come to your mind about your 
+								%span.copy-red.text-bold Website 
+								%span.copy-golden-yellow.text-bold &#150; 
+								Any 
+								%span.copy-genoa.text-bold Design 
+								%span.copy-sky-blue.text-bold Ideas 
+								you have&#44; any other 
+								%span.copy-red.text-bold Websites
+								you have seen&#44; or it could be a
+								%span.copy-blue.text-bold few lines
+								on what you have thought of 
+								%span.copy-mountain-meadow.text-bold ...
 								= objWebsite.label :website_description, "%p	Your thoughts on your	%span.border-red website, What do you want your website to contain?", class: "hidden"
 							//%p
 						//%div
@@ -36,8 +54,17 @@
 			.form-group.thoughts_on_your_website_box				
 				.row	
 					.col-md-7.margin-left-four-hundreds.margin-left-thirty-seven-hundreds
-						= objWebsite.text_area :website_description, class: "controls"
+						= objWebsite.text_area :website_description, placeholder: "Start from here...", class: "controls"
 					
+						%p
+							%span.copy-red Cool&#33;&#44; 
+							now you just have to fill in your
+							%span.copy-athletic-blue Name
+							and
+							%span.copy-medium-spring-green Email
+							and&#44; incase you have a
+							%span.copy-orange Business Name
+							you could fill it too.
 			.form-group.labels_for_people_name_and_email
 				.row
 					.col-md-5.margin-left-two-hundreds.your_name						
@@ -74,21 +101,26 @@
 							%span.border_three_pixels_green Business Name
 							= objWebsite.label :website_name, "Your business name:", class: "hidden"
 				.row
-					.col-md-5.box_for_business_name.margin-left-five-hundreds
+					.col-md-5.box-for-business-name
 						= objWebsite.text_field :website_name, class: "controls"						
 						
-			.row
-				.col-md-5.margin-left-five-hundreds
-					%h2	
-						= objWebsite.submit "Lets begin the work", id: "our-button"
+			%h2.sit-center
+				= objWebsite.submit "Let's Begin Your Work", id: "our-button"
 					
 	#your_website_its_us_now
 		%p
-			We will start making your website in a few hours 
+			We will start making your 
+			%span.copy-genoa Website in a 
+			%span.copy-orange few hours 
 			%span#the_clock
 				=image_tag "Circle.png", alt: "Few Hours"
 			&#46;
-			We Hope, both of us will have a great time	working together.
+			We 
+			%span.copy-medium-spring-green.text-bold Hope,
+			%span.copy-orange both
+			of us will have a 
+			%span.copy-blue.text-bold Great
+			time working together.
 	
 		#relationship_shapes
 			.circle.pieces.background-yellow.pull-left
@@ -103,34 +135,9 @@
 			We Use
 			%a{ href: "http:www.getbootstrap.com", title: "Twitter Bootstrap", id: "our-link" } Twitter
 			Bootstrap
-			&#44;
+			&#44; the
 			%a{ href: "http://www.rubyonrails.org", title: "Ruby on Rails", id: "our-link" } Ruby on Rails
 			Framework and 
 			%a{ href: "http://www.heroku.com", title: "Heroku", id: "our-link" } Heroku
-			for
-			%span.copy-violet-blue &#46; Building
-			your
-			%span.copy-blue Websites.
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			for Making
+			%span.copy-red Websites.
