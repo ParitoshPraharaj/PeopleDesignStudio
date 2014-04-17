@@ -213,8 +213,8 @@ input[ type=submit ]
 .copy-orange
 	color: $orange
 
-.copy-athletic-blue
-	color: $athletic-blue
+.copy-navy-blue-sports
+	color: $navy-blue-sports
 	
 .background-red  
 	background-color: #ff0000
@@ -549,3 +549,37 @@ p#your-framework-and-your-servers
 		textarea#note-description
 			height: 55px
 			@include border(0px, 1px, 1px, 1px, dashed, $dodger-blue)
+
+/* Styles For Lets Work Together */ 
+#lets-work-together
+	@include margin(3%, 0, 0, 0)
+	h1
+		@include margin(0%, 0%, 3%, 0%)
+	#lets-start
+		@include margin(0 0 8% 0)		
+		label
+			@include border(0px, 0px, 2px, 0px, solid, #ff0000)
+		input
+			color: #0081ff
+		input:focus
+			@include border(0px, 0px, 1px, 0px, dashed, #ff4500)
+		input#worlds_password:focus
+			color: #ff0000
+/* Styles for Login Page */
+#lets-start-again
+	h2
+		@include margin(0,0,5%,0)
+	.col-md-5.margin-left-four-hundreds
+		@include margin(0,0,7%, 33.33333333333334%)
+	#sign-in
+		@include margin(0, 0, 21%,0)
+	label
+		@include border(0px, 0px, 1px, 0px, solid, #ff0000)
+	input[type="text"]
+		width: 80%
+	input#worlds_password
+		@include margin(0, 0, 4%, 0%)
+	input[type="submit"]
+		@include margin(0, 0, 0, 5%)
+	h2
+		font-size: 30px

@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
 	
-	#Method for Signups and Logging In
+	#Method for Signups and Signing In
 	
 	respond_to :html, :js, :json
 	
@@ -10,32 +10,40 @@ class PeopleController < ApplicationController
 	
 	def new
 		@people = People.new
-	end
-	
-	def lets_get_started
-		@people = People.projects.build
-	end
+	end	
 	
 	def create
-		@people = People.new(required_parameters_for_saving_a_project_through_the_form)		
+		@people = People.new(fields_for_signup)
+		logger.debug "A Person with an Email Id: #{@people.attributes.inspect} Signed Up. #{ @people.attributes.inspect }"
 		if @people.save
-			#Rails function for returning the last saved record
-			redirect_to lets_begin_work_path
+			redirect_to projects_path, notice: "%span.copy-medium-spring-green.text-bold Hey&#44;
+				you just 
+				%span.copy-orange-red.text-bold Signed 
+				up&#44; lets get started working on your website."
 		else
-			redirect_to lets_get_started_path
+			flash.now.alert =  "%span.copy-medium-spring-green.text-bold Hey&#44;
+				either you have Signed Up with us&#44; or the 
+				%span.copy-deep-sky-blue.text-bold Email Id
+				you just
+				%span.copy-medium-spring-green.text-bold typed
+				in&#44; is in use by
+				%span.copy-orange.text-bold Someone
+				who has or is working with us on a
+				%span.copy-red.text-bold Website
+				%span.copy-golden-yellow.text-bold &#150
+				you could try your
+				%span.copy-orange-red.text-bold Secondary
+				Email Address."
+			render lets_work_together
 		end	
 	end	
 	
-        #Methods for Signing Up and Signing In
-        
-        def lets_work_together
+    def lets_work_together
 
-        end
+	end
 
 	def signup
-		@people = People.new(fields_for_signup)
-		flash[:success] = "Hey, you just signed up. Lets get started right away working on your website." if @people.save
-		redirect_to notes_path
+		
 	end
 	
 	def show
@@ -46,13 +54,7 @@ class PeopleController < ApplicationController
 	private
 	
 	def fields_for_signup
-		params.require(:people).permit(:email, :password_digest)
-	end
-	
-	# Method for Saving Projects
-	
-	def required_parameters_for_saving_a_project_through_the_form
-		params.require(:people).permit(:name, :email, projects_attributes: [:id, :name, :description ])
+		params.require(:people).permit(:email, :password)
 	end
 
 	

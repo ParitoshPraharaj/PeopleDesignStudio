@@ -1,4 +1,9 @@
 class SessionsController < ApplicationController
+  
+  def lets_start_again
+  
+  end
+  
   def sign_in
     people = People.where(email: params[:email]).first
     if people && people.authenticate(params[:password])
@@ -18,22 +23,23 @@ class SessionsController < ApplicationController
 			just used 
 			%span.copy-cyan.text-bold mis-typed
 			your
-			%span.copy-athletic-blue Password &#44;
+			%span.copy-navy-blue-sports Password &#44;
 			or&#44; if you have
 			%span.copy-medium-spring-green.text-bold Forgotten&#44;
 			you could
 			%span.copy-red.text-bold Create
 			a new one.
 			%span.copy-orange-red Make a new Password."
+	end		
   end
 
   def sign_out
 	session[:people_id] = people.id
-	redirect_to photos_acrosss_the_world_path, notice: "%span.copy-athletic-blue Hey&#44;
+	redirect_to photos_acrosss_the_world_path, notice: "%span.copy-navy-blue-sports Hey&#44;
 		%span.copy-red Hope
 		to see you back again. Stay ready for an
 		%span.copy-red.text-bold Website
-		%span.copy-medium-spring-green Update.	
+		%span.copy-medium-spring-green Update."
   end
   
 end

@@ -1,0 +1,21 @@
+#lets-start-again
+	.row
+		.col-md-5.margin-left-four-hundreds
+			%h2.copy-orange-red
+				Let&rsquo;s Start Again
+			=form_for :worlds, url: sign_in_path, html: {id: "sign-in"} do |objWorld|
+				=objWorld.label :email
+				=objWorld.text_field :email, class: 'controls'
+				
+				=objWorld.label :password
+				=objWorld.text_field :password, class: 'controls'
+
+				=objWorld.submit "Sign In", class: "pull-left"
+				
+		%h3.sit-center.sit-bottom.copy-navy-blue
+			We will finish your website, stead fast.
+			
+		.col-md-4
+		
+	.row
+		.col-md-6
