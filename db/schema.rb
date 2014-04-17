@@ -43,15 +43,6 @@ ActiveRecord::Schema.define(version: 20140413185200) do
     t.datetime "updated_at"
   end
 
-  create_table "projects", force: true do |t|
-    t.integer  "people_id"
-    t.text     "name"
-    t.text     "description"
-    t.text     "extra_information"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "tasks", force: true do |t|
     t.integer  "work_id"
     t.string   "name"
