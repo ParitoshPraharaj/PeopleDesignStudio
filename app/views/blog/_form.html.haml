@@ -1,2 +1,9 @@
 =form_for :blog, url: blog_path do |objBlog|
-
+  .row
+    .col-md-8
+      objBlog.text_field :title
+  .row
+    .col-md-8
+       objBlog.text_area :content
+  %h2.sit-center
+    = objBlog.submit "Let the World Know", id: "our-button"
