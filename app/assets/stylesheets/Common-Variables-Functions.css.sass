@@ -55,6 +55,8 @@ $violet-blue: #996496
 $orange: #ff3e00
 
 $navy-blue-sports: #0255FF
+
+$hollywood-cerise: #ff00B4
 /* Widths */
 
 $one-pixel: 1px
@@ -72,10 +74,15 @@ $two-pixels: 2px
 	font-size: $font-size
 	line-height: $font-size * 1.5
 
-@mixin Link-Home-Page
-	color: #dd3030
+@mixin link
+	color: $red
 	text-decoration: none
-	border-bottom: 2px solid #00a4ff	
+	border-bottom: 2px solid $deep-sky-blue
+
+@mixin link-hover
+	color: $orange-red
+	text-decoration: none
+	border-bottom: 2px solid $hollywood-cerise
 
 @mixin box-width-height-and-margin($width) //Mixin for div widths
 	width: $width
@@ -90,7 +97,6 @@ $two-pixels: 2px
 	
 @mixin margin($margin-top: 0%, $margin-right: 0%, $margin-bottom: 0%, $margin-left: 0%)
 	margin: $margin-top $margin-right $margin-bottom $margin-left
-
 	
 /* Remove this Mixin and Change Css Classes Accordingly */	
 @mixin border($border-top: 0px, $border-right: 0px, $border-bottom: 0px, $border-left: 0px, $type: solid, $color: #ff0000)
@@ -110,10 +116,7 @@ $two-pixels: 2px
 	color: $white
 	@include padding(0.5%, 2.5%, 0.5%, 2.5%)
 	@include border-radius(2px)
-
-@mixin link($color: #fffa0e, $color-text-underscore: #fff)
-	color: $color
-	text-underscore: 0px solid $color-text-underscore
+	border: none
 
 @mixin text-fields-of-a-form
 	font: normal 20px/24px $font-name

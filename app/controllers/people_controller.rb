@@ -13,15 +13,26 @@ class PeopleController < ApplicationController
 	end	
 	
 	def create
-		@people = People.new(fields_for_signup)
+		@people = People.create(fields_for_signup)
 		logger.debug "A Person with an Email Id: #{@people.attributes.inspect} Signed Up. #{ @people.attributes.inspect }"
 		if @people.save
 			redirect_to projects_path, notice: "%span.copy-medium-spring-green.text-bold Hey&#44;
-				you just 
-				%span.copy-orange-red.text-bold Signed 
-				up&#44; lets get started working on your website."
+				%span.copy-navy-blue-sports Welcome
+				to our
+				%span.copy-red.text-bold Design
+				%span.copy-orange.text-bold Studio.
+				%span.copy-medium-spring-green It&rsquo;s
+				your
+				%span.copy-jade.text-bold First
+				%span.copy-navy-blue-sports.text-bold time
+				here&#44; why don't you
+				%span.copy-navy-blue-sports.text-bold Write
+				your first
+				%span.copy-cyan.text-bold Lines
+				%span.copy-medium-spring-green.text-bold Here."
+				
 		else
-			flash.now.alert =  "%span.copy-medium-spring-green.text-bold Hey&#44;
+			flash.now.alert = "%span.copy-medium-spring-green.text-bold Hey&#44;
 				either you have Signed Up with us&#44; or the 
 				%span.copy-deep-sky-blue.text-bold Email Id
 				you just
@@ -34,16 +45,12 @@ class PeopleController < ApplicationController
 				you could try your
 				%span.copy-orange-red.text-bold Secondary
 				Email Address."
-			render lets_work_together
+			render :lets_work_together
 		end	
 	end	
 	
     def lets_work_together
-
-	end
-
-	def signup
-		
+		@people = People.new
 	end
 	
 	def show

@@ -6,6 +6,12 @@ body
 	color: $black
 	font: normal 20px/30px $font-name
 
+a
+	@include link
+
+a:hover
+	@include link-hover
+	
 p
 	@include font-and-line-height(20px)
 
@@ -16,15 +22,7 @@ h1, h2, h3, h4, h5, h6
 /* Fonts */
 /* [Letter Spacing ] */
 h3.better-spacing
-	@include letter-spacing($one-pixel)
- 
-.main-link //A Custom link over-riding button behaviour
-	@include link
-
-#our-link
-	color: $orange-red
-	text-decoration: none
-	border-bottom: 2px solid $deep-sky-blue
+	@include letter-spacing($one-pixel)	
 	
 #our-button
 	@include button
@@ -70,6 +68,12 @@ div
 /* Margins */
 	
 /* Bottom Margins */
+.margin-bottom-three-percent
+	@inlcude margin(0,0, 3%, 0)
+	
+.margin-bottom-four-percent
+	@include margin(0,0, 4%, 0)
+
 .margin-bottom-three-percent
 	margin-bottom: 3%
 
@@ -301,7 +305,10 @@ input[ type=submit ]
 	width: 100%
 	margin: 0 auto 3%	
 	text-align: center
- 		
+ 
+#our-button
+	@include button
+	
 #our-websites  
 	text-align: center
 	
@@ -408,6 +415,9 @@ h2 #lets_start
 	@include input-placeholders
 	
 #the-design-studio-form .controls
+	@include border(1px, 1px, 1px, 1px, dashed, $dodger-blue)
+
+#the-design-studio-form .controls:focus
 	@include border(1px, 1px, 1px, 1px, dashed, $dodger-blue)
 
 //Styles for Placeholder
@@ -583,3 +593,5 @@ p#your-framework-and-your-servers
 		@include margin(0, 0, 0, 5%)
 	h2
 		font-size: 30px
+
+/* Styles For Projects Index Page */

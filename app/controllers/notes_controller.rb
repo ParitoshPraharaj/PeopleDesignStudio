@@ -2,12 +2,6 @@ class NotesController < ApplicationController
   
   #Custom Methods
   
-  private
-  
-  def fields_for_creating_a_note
-	params.require(:notes).permit(:title, :content)  
-  end
-  
   respond_to :html, :json
   
   def index
@@ -43,6 +37,12 @@ class NotesController < ApplicationController
   def delete
 	@note = Note.find(params[:title])
 	@note.destroy
+  end
+  
+  private
+  
+  def fields_for_creating_a_note
+	params.require(:notes).permit(:title, :content)  
   end
  
 end 

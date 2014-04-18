@@ -1,0 +1,39 @@
+#people-design-studio-home
+	%h3.sit-center.margin-bottom-three-percent
+		%span.copy-navy-blue-sports Let&rsquo;s Get Started
+	%h2.sit-center.copy-orange-red.text-bold.margin-bottom-three-percent
+		Websites
+	.row
+		.col-md-1
+			%h3.copy-deep-sky-blue
+				No.
+		.col-md-2		
+			%h3.copy-red
+				Name
+		.col-md-2		
+			%h3.copy-golden-yellow
+				Business Name
+		.col-md-4		
+			%h3.copy-blue
+				Description
+		.col-md-3		
+			%h3.copy-medium-spring-green
+				Email
+	- @websites.each do |website|
+		.row
+			%ol.col-md-1.copy-deep-sky-blue
+			.col-md-2
+				%p.copy-red
+					#{ website.people_name }
+			.col-md-2
+				%p.copy-golden-yellow
+					- if website.website_name
+						#{ website.website_name }
+					- else
+						No Business Name							
+			.col-md-4
+				%p.copy-blue
+					#{ website.website_description }
+			.col-md-3
+				%p.copy-medium-spring-green
+					#{ website.people_email }

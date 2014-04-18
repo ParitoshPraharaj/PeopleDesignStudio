@@ -4,7 +4,7 @@ class WebsitesController < ApplicationController
   end
 
   def index
-      @websites = Website.order(created_at: :desc).limit(3)
+      @websites = Website.order(id: :desc).limit(3)
   end
 
   def lets_get_started
@@ -15,8 +15,9 @@ class WebsitesController < ApplicationController
 	@website = Website.create(parameters_for_saving_the_website_form)
         logger.info "A Website Saved: @website.attributes.inspect"
 	if @website.save
-		@person_name = @website.people_name
-	    redirect_to lets_begin_work_path(@person_name)		
+		@website_information = Website.last
+		person_name = @website_information.people_name
+	    redirect_to lets_begin_work_path
 	else
         logger.info "Attributes did not got saved: @website.attributes.inspect"
         render lets_get_started
@@ -24,8 +25,7 @@ class WebsitesController < ApplicationController
   end
   
   def lets_begin_work
-	#@person_just_created_a_project = website.people_name
-	#render lets_begin_work(@person_just_created_a_project)
+	
   end
   
   def parameters_for_saving_the_website_form
