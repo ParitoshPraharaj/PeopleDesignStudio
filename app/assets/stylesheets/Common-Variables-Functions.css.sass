@@ -111,13 +111,19 @@ $two-pixels: 2px
 @mixin letter-spacing($pixel-width)
 	letter-spacing: $pixel-width
 
-@mixin button
+@mixin people-design-studio-button-blue
 	background-color: $dodger-blue
 	color: $white
 	@include padding(0.5%, 2.5%, 0.5%, 2.5%)
 	@include border-radius(2px)
 	border: none
 
+@mixin people-design-studio-button-orange
+	background-color: $orange
+	color: $white
+	@include padding(0.5%, 2.5%, 0.5%, 2.5%)	
+	border: none		
+	
 @mixin text-fields-of-a-form
 	font: normal 20px/24px $font-name
 	color: #0000ff

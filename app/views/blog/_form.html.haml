@@ -1,9 +1,13 @@
-=form_for :blog, url: blog_path do |objBlog|
-  .row
-    .col-md-8
-      objBlog.text_field :title
-  .row
-    .col-md-8
-       objBlog.text_area :content
-  %h2.sit-center
-    = objBlog.submit "Let the World Know", id: "our-button"
+=form_for @blog, url: blog_index_path, method: :post do |objBlog|
+	.row
+		.col-md-8
+			.form-group
+				=objBlog.label :title, "Title of the Post", class: 'copy-navy-blue-sports'
+				=objBlog.text_field :title, class: "controls", placeholder: "Your Heading goes here ..."
+	.row
+		.col-md-8
+			.form-group		
+				=objBlog.label :content, "Body ...", class: "copy-navy-blue-sports"
+				=objBlog.text_area :content, class: "controls", placeholder: "Start from here ..."
+		
+	=objBlog.submit 'It is Done', id: 'people-design-studio-button-orange', class: 'margin-left-four-hundreds'

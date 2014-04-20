@@ -1,10 +1,7 @@
 TheDesignStudio::Application.routes.draw do
  
-  get "blog/new"
-  get "blog/create"
-  get "blog/index"
-  get "blog/edit"
-  get "blog/update"
+  root 'home#index'
+    
   get "sessions/sign_in"
   get "sessions/sign_out"
   get "websites/new"
@@ -33,9 +30,7 @@ TheDesignStudio::Application.routes.draw do
   get "tasks/update"
   get "tasks/delete"
   get "photos_from_around_the_world/index"
-  delete "sign_out", to: "worlds#sign_out"
-	
-  root 'home#index'
+  delete "sign_out", to: "worlds#sign_out"	
     
   #Named Routes
 	
@@ -46,6 +41,8 @@ TheDesignStudio::Application.routes.draw do
   post 'sign_in', to: 'worlds#sign_in'
   
   get 'people/:email' => 'people#show'
+  
+  get 'blog/write-your-post', to: "blog#new"
   
   resources :projects
 	
@@ -60,6 +57,8 @@ TheDesignStudio::Application.routes.draw do
   resources :work
   
   resources :websites
+  
+  resources :blog
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

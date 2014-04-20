@@ -15,17 +15,15 @@ class WebsitesController < ApplicationController
 	@website = Website.create(parameters_for_saving_the_website_form)
         logger.info "A Website Saved: @website.attributes.inspect"
 	if @website.save
-		@website_information = Website.last
-		person_name = @website_information.people_name
-	    redirect_to lets_begin_work_path
+		redirect_to @website
 	else
         logger.info "Attributes did not got saved: @website.attributes.inspect"
         render lets_get_started
 	end	
   end
   
-  def lets_begin_work
-	
+  def show
+	@website = Website.find(params[:people_name])	
   end
   
   def parameters_for_saving_the_website_form
