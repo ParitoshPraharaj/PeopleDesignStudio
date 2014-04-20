@@ -1,23 +1,23 @@
 class SessionsController < ApplicationController
   
-  def lets_start_again
-  
+  def new
+	@user = User.new
   end
   
   def sign_in
-    people = People.where(email: params[:email]).first
-    if people && people.authenticate(params[:password])
-      session[:people_id] = people.id
-      redirect_to projects_path, notice: "%span.copy-medium-spring-green Hey&#44;
+    user = User.where(email: params[:email]).first
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+	  # This Should be Changed to the Work Path
+      redirect_to notes_path, notice: "%span.copy-medium-spring-green Hey&#44;
 		%span.copy-red.text-bold Welcome
 		back gain. 
 		%span.copy-orange-red.text-bold Let&#rsquo;s
 		Get
 		%span.copy-atheletic-blue.text-bold Started 
 		With Work."
-	 else
-		render lets_start_again_path
-		flash.now.alert "%span.medium-spring-green Oops&#33;
+	 else		
+		flash.now.alert = "%span.medium-spring-green Oops&#33;
 			%span.copy-red.text-bold &#150;
 			%span.copy-golden-yellow.text-bold You
 			just used 
@@ -30,12 +30,14 @@ class SessionsController < ApplicationController
 			%span.copy-red.text-bold Create
 			a new one.
 			%span.copy-orange-red Make a new Password."
+		render lets_start_again_path	
 	end		
   end
 
   def sign_out
-	session[:people_id] = people.id
-	redirect_to photos_acrosss_the_world_path, notice: "%span.copy-navy-blue-sports Hey&#44;
+	session[:user_id] = user.id
+	#To be changed to Worlds News Section
+	redirect_to lets_work_together_path, notice: "%span.copy-navy-blue-sports Hey&#44;
 		%span.copy-red Hope
 		to see you back again. Stay ready for an
 		%span.copy-red.text-bold Website

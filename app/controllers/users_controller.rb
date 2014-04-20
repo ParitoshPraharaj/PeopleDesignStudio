@@ -1,21 +1,20 @@
-class PeopleController < ApplicationController
-	
-	#Method for Signups and Signing In
+class UsersController < ApplicationController
+ #Method for Signups and Signing In
 	
 	respond_to :html, :js, :json
 	
 	def index
-		@people = People.all
+		@user = User.all
 	end
 	
 	def new
-		@people = People.new
+		@user = User.new
 	end	
 	
 	def create
-		@people = People.create(fields_for_signup)
-		logger.debug "A Person with an Email Id: #{@people.attributes.inspect} Signed Up. #{ @people.attributes.inspect }"
-		if @people.save
+		@user = User.create(fields_for_signup)
+		logger.debug "A Person with an Email Id: #{@user.attributes.inspect} Signed Up. #{ @user.attributes.inspect }"
+		if @user.save
 			redirect_to new_note_path, notice: "%span.copy-medium-spring-green.text-bold Hey&#44;
 				%span.copy-navy-blue-sports Welcome
 				to our
@@ -32,6 +31,7 @@ class PeopleController < ApplicationController
 				%span.copy-medium-spring-green.text-bold Here."
 				
 		else
+			logger.info "Some Problem prevented the User from Signing Up. # { @user.attributes.inspect }"
 			flash.now.alert = "%span.copy-medium-spring-green.text-bold Hey&#44;
 				either you have Signed Up with us&#44; or the 
 				%span.copy-deep-sky-blue.text-bold Email Id
@@ -45,32 +45,18 @@ class PeopleController < ApplicationController
 				you could try your
 				%span.copy-orange-red.text-bold Secondary
 				Email Address."
-			render :lets_work_together
+			render :new
 		end	
 	end
 	
 	def show
-		@people = People.find(params[:email])
-		respond_with(@people)
+		@user = User.find(params[:email])
+		respond_with(@user)
 	end
 	
 	private
 	
 	def fields_for_signup
-		params.require(:people).permit(:email, :password_digest)
+		params.require(:user).permit(:email, :password_digest)
 	end
-
-	
 end
-
-
-
-
-
-
-
-
-
-
-
-

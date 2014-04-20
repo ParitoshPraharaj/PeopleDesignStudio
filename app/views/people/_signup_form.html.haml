@@ -1,11 +1,14 @@
-=form_for :people, url: person_path, method: :post do |objPeople|
+=form_for :people, url: people_path, method: :post do |objPeople|
 	.form-group
-		=objPeople.label :email
+		%p.sit-center
+			%span Email
+		=objPeople.label :email, class: "hidden"
 		=objPeople.text_field :email, class: "controls"
 			
 	.form-group
-		=objPeople.label :password
-		=objPeople.text_field :password, class: "controls"
+		%p.sit-center
+			%span Password
+		=objPeople.label :password_digest, class: "hidden"
+		=objPeople.text_field :password_digest, class: "controls"
 		
-	=objPeople.submit 'Save'
-end
+	=objPeople.submit 'Roll In', id: "people-design-studio-button-blue"

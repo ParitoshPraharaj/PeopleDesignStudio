@@ -1,11 +1,12 @@
 #notes-form
 	=form_for :notes, url: notes_path do |objNote|
-		=objNote.label 
+		=objNote.label :title
 		=objNote.text_field :title, placeholder: "Note's Name", class: "controls border-bottom-dashed-blue", id: "note-title"
 		
 		.row
-			.col-md-8	
-				=objNote.text_area :description, placeholder: "Write your note...", class: "controls", id: "note-description"
+			.col-md-8
+				=objNote.label :content
+				=objNote.text_area :content, placeholder: "Write your note...", class: "controls", id: "note-description"
 		
 		=objNote.submit 'Save'
 	end

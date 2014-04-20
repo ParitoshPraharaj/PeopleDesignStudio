@@ -1,5 +1,10 @@
 TheDesignStudio::Application.routes.draw do
  
+  get "users/new"
+  get "users/create"
+  get "users/edit"
+  get "users/update"
+  get "users/index"
   root 'home#index'
     
   get "sessions/sign_in"
@@ -35,9 +40,13 @@ TheDesignStudio::Application.routes.draw do
   #Named Routes
 	
   get "lets-get-started", to: "websites#lets_get_started", as: "lets_get_started"
+  
   get "lets-begin-work", to: "websites#lets_begin_work", as: "lets_begin_work"
-  get "lets-work-together", to: "people#lets_work_together", as: 'lets_work_together'
+  
+  get "lets-work-together", to: "users#new", as: 'lets_work_together'
+  
   get 'lets-start-again', to: 'sessions#lets_start_again', as: 'lets_start_again'
+  
   post 'sign_in', to: 'worlds#sign_in'
   
   get 'people/:email' => 'people#show'

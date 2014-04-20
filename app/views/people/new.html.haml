@@ -1,5 +1,12 @@
 #lets-work-together
-	%h1.sit-center.copy-dodger-blue
-		Let&rsquo;s work together.
-	#lets-start
-		=render 'form'	
+	%h2.sit-center.copy-medium-spring-green
+		Hey, This is where we work.
+	%h3.sit-center.copy-navy-blue-sports 
+		You, just have to SIGN UP.	
+	.row#lets-start
+		.col-md-5
+			=render 'signup_form'
+	-#- if @people.new_record?
+	%h3#password-no-show.sit-center.copy-navy-blue
+		We believe it&rsquo;s easier to remember passwords when you see it and type.
+		
