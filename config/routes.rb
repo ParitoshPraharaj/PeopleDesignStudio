@@ -12,9 +12,6 @@ TheDesignStudio::Application.routes.draw do
   get "websites/new"
   get "websites/lets_get_started"
   get "websites/create"
-  #Custom GET Requests
-  get 'notes/:title' => 'notes#show'
-  get 'notes/edit/:title' => 'notes#edit'
     
   get "feedback_on_ideas/new"
   post "feedback_on_ideas/create"
@@ -40,8 +37,6 @@ TheDesignStudio::Application.routes.draw do
   #Named Routes
 	
   get "lets-get-started", to: "websites#lets_get_started", as: "lets_get_started"
-  
-  get "lets-begin-work", to: "websites#lets_begin_work", as: "lets_begin_work"
   
   get "lets-work-together", to: "users#new", as: 'lets_work_together'
   

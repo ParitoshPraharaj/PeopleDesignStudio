@@ -24,12 +24,12 @@ class NotesController < ApplicationController
   end
 
   def edit
-	@note = Note.find(params[:title])
+	@note = Note.find(params[:id])
   end
 
   def update
 	@note = Note.find(params[:id])
-	if @note.update
+	if @note.update(fields_for_creating_a_note)
 		flash[:message] = 'Hey, you added a few lines to your Note.'
 		redirect_to @note
 	else
@@ -39,7 +39,7 @@ class NotesController < ApplicationController
   end
 
   def show
-	@note = Note.find(params[:title])
+	@note = Note.find(params[:id])
 	respond_with(@note)
   end
 

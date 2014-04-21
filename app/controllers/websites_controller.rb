@@ -1,6 +1,9 @@
 class WebsitesController < ApplicationController
+  
+  respond_to :html, :js, :xml  
+  
   def new
-	
+	@website = Website.new
   end
 
   def index
@@ -23,7 +26,8 @@ class WebsitesController < ApplicationController
   end
   
   def show
-	@website = Website.find(params[:people_name])	
+	@website = Website.find(params[:id])
+	respond_with(@website)	
   end
   
   def parameters_for_saving_the_website_form

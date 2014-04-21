@@ -1,5 +1,12 @@
 #your-note	
-	%h3.copy-orange-red.margin-bottom-four-percent
-		#{ @note.title }
-	%p.copy-navy-blue-sports
-		#{ @note.content }	
+	.row
+		.col-md-8
+			%h3.copy-orange-red.margin-bottom-four-percent
+				#{ @note.title }
+				
+			%p.copy-navy-blue-sports
+				#{ @note.content }
+		.col-md-4
+			=link_to "Edit this Note", edit_note_path(@note)
+		
+		

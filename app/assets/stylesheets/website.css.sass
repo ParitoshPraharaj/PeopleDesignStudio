@@ -19,6 +19,8 @@ h1, h2, h3, h4, h5, h6
 	font-family: 'Courier New', Courier, monospace
 	margin: 0
 
+.input-placeholders
+	@include input-placeholders
 /* Fonts */
 /* [Letter Spacing ] */
 h3.better-spacing
@@ -33,12 +35,15 @@ h3.better-spacing
 /* Boxes */
 div
 	@include box-width-height-and-margin(100%)
-
 	
 .eighty_percent_width
 	@include box-width-height-and-margin(80%)
 
+/* Custom Widths */
+	
 @include width(thirty-percent, 30%)
+
+@include width(seventy-percent, 70%)
 	
 /* Twitter Bootstrap's Column Classes Re-Named */
 .margin-left-zero-hundred
@@ -124,6 +129,8 @@ div
 .text-bold
 	font-weight: bold
 	
+.copy-capitals
+	text-transform: uppercase	
 /* Text Boxes, Labels and Form Inputs */	
 label
 	font-weight: normal
@@ -408,14 +415,13 @@ h2 #lets_start
 	min-height: 2px	
 
 #the-design-studio-form
-	margin: 0 auto 8%	
-	@include input-placeholders
+	margin: 0 auto 8%
 	
 #the-design-studio-form .controls
 	@include border(1px, 1px, 1px, 1px, dashed, $dodger-blue)
 
 #the-design-studio-form .controls:focus
-	@include border(1px, 1px, 1px, 1px, dashed, $dodger-blue)
+	@include border(1px, 1px, 1px, 1px, solid, $dodger-blue)
 
 //Styles for Placeholder
 	
@@ -512,6 +518,12 @@ p#your-framework-and-your-servers
 	font-size: 24px
 	padding-top: 5%
 
+/* Lets Begin Work */
+#lets-begin-work
+	#information-team
+		width: 65%
+		margin: 0 auto 5%
+	
 /* Photos From Around the World */
 
 #pictures_box
@@ -549,10 +561,6 @@ p#your-framework-and-your-servers
 #make-a-note
 	margin-top: -2%
 	#notes-form
-		input#note-title
-			width: 55%
-			margin: 0 auto 10%
-
 		textarea#note-description
 			height: 55px
 			@include border(0px, 1px, 1px, 1px, dashed, $dodger-blue)
