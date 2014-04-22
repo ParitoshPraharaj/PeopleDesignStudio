@@ -1,5 +1,5 @@
 #notes-form
-	=form_for :notes, url: notes_path do |objNote|
+	=form_for @note do |objNote|
 		.row
 			.col-md-8.margin-left-one-hundreds
 				=objNote.label :title, "Title of the Note.", class: "copy-medium-spring-green"

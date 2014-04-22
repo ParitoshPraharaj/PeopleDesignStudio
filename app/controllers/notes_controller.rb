@@ -11,10 +11,11 @@ class NotesController < ApplicationController
   
   def new
 	@note = Note.new
+	@notes = Note.all
   end
 	
   def create
-	@notes = Note.all
+	#@notes = Note.all
 	@note = Note.create(fields_for_creating_a_note)
 	if @note.save
 		flash[:message] = 'Hey, your Note has been created. Get Going now.'

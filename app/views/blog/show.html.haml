@@ -1,9 +1,11 @@
 #our-knowledge
 	.row
 		.col-md-8
-			%h2
-				= @blog.title
+			%h2.copy-orange-red.pull-left
+				= link_to "#{ @blog.title } ", blog_path(@blog)
+			%p.pull-right
+				= link_to "Edit this Post", edit_blog_path(@blog)
 				
-			%p
+			%p.copy-navy-blue-sports
 				= @blog.content
 	
