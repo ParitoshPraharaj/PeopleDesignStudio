@@ -28,11 +28,14 @@ h3.better-spacing
 	@include letter-spacing($one-pixel)	
 
 #button-dodger-blue-second
-	color: $orange-red
+	color: $navy-blue-sports
 	@include padding(3%,3%,3%,3%)
 	@include border-radius(2px)
 	@include border(1px, 1px, 1px, 1px, solid, $dodger-blue-second)
 
+a#button-dodger-blue-second:hover
+	@include button-hover($black, $dodger-blue-second)	
+	
 #people-design-studio-button-orange
 	@include people-design-studio-button-orange
 
@@ -80,6 +83,9 @@ div
 /* Margins */
 
 /* Top Margins */
+.margin-top-four-percent
+	@include margin(4%,0,0,0)
+	
 .margin-top-ten-percent
 	@include margin(10%,0,0,0)
 	
@@ -259,7 +265,7 @@ textarea.controls
 .border-bottom-dashed-blue
 	@include border(0px, 0px, 1px, 0px, dashed, $dodger-blue)
 	
-.border_four_pixels_red  
+.border-four-pixels-red  
 	border-bottom: 4px solid #ff0000
  
 .border_four_pixels_green  
@@ -282,6 +288,9 @@ textarea.controls
 	
 .border_three_pixels_yellow  
 	border-bottom: 3px solid #fffa0e
+
+.border-deep-sky-blue
+	border-bottom: 1px solid $deep-sky-blue
 	
 .triangle  
 	width: 0
@@ -621,10 +630,6 @@ p#your-framework-and-your-servers
 /* Styles For The Note Page */
 
 
-
-/* Styles for The First Blog Post */
-
-
 /* Styles for The Blog Section */
 #our-blog
 	.col-md-5
@@ -636,9 +641,19 @@ p#your-framework-and-your-servers
 			margin-bottom: 4%
 
 
-
-
-
+/* Styles for a Single Blog Post */
+#our-knowledge
+	h1
+		@include margin(5%,0,5%,0)
+	h1 a
+		color: $orange-red
+		text-decoration: none
+		border: none
+	h1 a:hover
+		color: $orange-red
+		text-decoration: none
+		border-bottom: 2px solid $deep-sky-blue
+		
 
 
 

@@ -6,6 +6,8 @@ $line-height: $font-size * 1.5
 
 /* Colors */
 
+$black: #000
+
 $white: #fff
 
 $red: #ff0000
@@ -122,6 +124,10 @@ $two-pixels: 2px
 		@include border-radius(2px)
 		@include border(1px, 1px, 1px, 1px, solid, $border-color)
 
+@mixin button-hover($color, $border-color)
+	color: $color
+	@include border(1px,1px,1px,1px,solid,$border-color)				
+		
 @mixin people-design-studio-button-orange
 	background-color: $orange
 	color: $white

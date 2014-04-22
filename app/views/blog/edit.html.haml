@@ -1,16 +1,19 @@
-%h3.copy-navy-blue-sports.sit-center
-	Edit Your Post
+%h3.copy-golden-yellow.sit-center.margin-bottom-four-percent
+	%span.border_red Edit Your Post
 	
+%h1.copy-red.sit-center.margin-bottom-five-percent
+	=@blog.title
+
 =form_for @blog, url: blog_path, method: :patch do |objBlog|
 	.row
-		.col-md-8.margin-left-one-hundreds
+		.col-md-8
 			.form-group
-				=objBlog.label :title, "Title of the Post", class: 'copy-navy-blue-sports'
+				=objBlog.label :title, "Title of the Post", class: 'copy-orange-red'
 				=objBlog.text_field :title, class: "controls", placeholder: "Your Heading goes here ..."
 	.row
-		.col-md-8.margin-left-one-hundreds
+		.col-md-8
 			.form-group		
-				=objBlog.label :content, "Body ...", class: "copy-navy-blue-sports"
+				=objBlog.label :content, "Body ...", class: "copy-orange-red"
 				=objBlog.text_area :content, class: "controls", placeholder: "Start from here ..."
 	
 	=objBlog.submit 'It is Done', id: 'button-pale-cornflour-blue', class: 'margin-left-four-hundreds'	
