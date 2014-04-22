@@ -23,13 +23,16 @@ h1, h2, h3, h4, h5, h6
 	@include input-placeholders
 	
 /* Fonts */
-/* [Letter Spacing ] */
+.font-size-twenty-eight-pixels
+	font-size: 28px
+
+/* Letter Spacing  */
 h3.better-spacing
 	@include letter-spacing($one-pixel)	
 
 #button-dodger-blue-second
-	color: $navy-blue-sports
-	@include padding(3%,3%,3%,3%)
+	color: $medium-spring-green
+	@include padding(1%,2%,1%,2%)
 	@include border-radius(2px)
 	@include border(1px, 1px, 1px, 1px, solid, $dodger-blue-second)
 
@@ -94,7 +97,7 @@ div
 	@include margin(0,0,2%,0)
 
 .margin-bottom-three-percent
-	@inlcude margin(0,0, 3%, 0)
+	@include margin(0,0,3%,0)
 	
 .margin-bottom-four-percent
 	@include margin(0, 0, 4%, 0)
@@ -133,7 +136,8 @@ div
 .margin_left_minus_six_hundreds
 	margin-left: -6%
 	
-/* Common CSS properties turned into Classes for better short interaction between HTML and CSS */
+/* Alignment and Orientation Classes */
+
 .sit-bottom  
 	clear: both
 	
@@ -147,8 +151,10 @@ div
 	font-weight: bold
 	
 .copy-capitals
-	text-transform: uppercase	
-/* Text Boxes, Labels and Form Inputs */	
+	text-transform: uppercase
+	
+/* Text Boxes, Labels and Form Inputs */
+
 label
 	font-weight: normal
 	
@@ -171,6 +177,9 @@ textarea.controls
 	
 .yellow
 	color: #fff0ae
+
+.copy-white
+	color: #fff
 	
 .copy-red  
 	color: #ff0000
@@ -253,11 +262,20 @@ textarea.controls
 .background-blue  
 	background-color: #0000ff
  
+.background-orange
+	background-color: $orange
+	
 .background-yellow  
 	background-color: #fffa0e
  
 .background-orange-red
 	background-color: $orange-red
+
+.background-dark-orange
+	background-color: $dark-orange
+		
+.background-international-orange
+	background-color: $international-orange
 	
 .border-dashed-blue
 	@include border(1px, 1px, 1px, 1px, dashed, $dodger-blue)
@@ -309,6 +327,7 @@ textarea.controls
 	height: 40px
  
 /* Container Classes */
+
 .content_holder_box  
 	position: relative
  
@@ -361,11 +380,20 @@ textarea.controls
 	margin: 0 0 5% 12.33333333333334%
 	text-align: center	
  	
-#lets_start_your_website  
+#lets-start-your-website
 	margin-bottom: 8%
 	text-align: center
 	letter-spacing: 2px
  
+#lets-start-your-website #button-dodger-blue-seconds
+	padding: 1% 2% 1% 2%
+ 
+#what-we-are-working-on-right-now .col-md-5
+	@include margin(0,0,5%,25%)
+ 
+.background-international-orange h1
+	padding: 17%
+	
 h2#we_make_business_personal_and_hobby_websites  
 	margin: 0 0 4% 8.33% 
 	text-align: center
