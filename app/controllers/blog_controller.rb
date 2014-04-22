@@ -1,11 +1,14 @@
 class BlogController < ApplicationController
 
+  respond_to :html, :json
+  
   def we_are_on_the_internet_our_very_first_lines
 	
   end
 	
   def index
-	@posts = Blog.all
+	@blogs = Blog.all
+	respond_with(@blogs)
   end
 	
   def new
