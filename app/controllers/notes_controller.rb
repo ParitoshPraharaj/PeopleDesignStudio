@@ -6,6 +6,7 @@ class NotesController < ApplicationController
   
   def index
 	@notes = Note.all
+	respond_with(@notes)
   end
   
   def new
@@ -51,7 +52,7 @@ class NotesController < ApplicationController
   private
   
   def fields_for_creating_a_note
-	params.require(:notes).permit(:title, :content) 
+	params.require(:note).permit(:title, :content) 
   end
  
 end 

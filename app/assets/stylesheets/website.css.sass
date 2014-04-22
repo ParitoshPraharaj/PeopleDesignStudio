@@ -21,13 +21,17 @@ h1, h2, h3, h4, h5, h6
 
 .input-placeholders
 	@include input-placeholders
+	
 /* Fonts */
 /* [Letter Spacing ] */
 h3.better-spacing
 	@include letter-spacing($one-pixel)	
-	
-#people-design-studio-button-blue
-	@include people-design-studio-button-blue
+
+#button-dodger-blue-second
+	color: $orange-red
+	@include padding(3%,3%,3%,3%)
+	@include border-radius(2px)
+	@include border(1px, 1px, 1px, 1px, solid, $dodger-blue-second)
 
 #people-design-studio-button-orange
 	@include people-design-studio-button-orange
@@ -74,8 +78,15 @@ div
 	margin-left: 100%
 
 /* Margins */
+
+/* Top Margins */
+.margin-top-ten-percent
+	@include margin(10%,0,0,0)
 	
 /* Bottom Margins */
+.margin-bottom-two-percent
+	@include margin(0,0,2%,0)
+
 .margin-bottom-three-percent
 	@inlcude margin(0,0, 3%, 0)
 	
@@ -140,9 +151,6 @@ label
 	
 textarea.controls
 	height: 330px
-	
-input[ type=submit ]
-	@include input-form-submit
 	
 /* Colors */
 
@@ -223,6 +231,12 @@ input[ type=submit ]
 
 .copy-navy-blue-sports
 	color: $navy-blue-sports
+
+.copy-pale-cornflour-blue
+	color: $pale-cornflour-blue
+
+.copy-dodger-blue-second
+	color: $dodger-blue-second
 	
 .background-red  
 	background-color: #ff0000
@@ -236,6 +250,9 @@ input[ type=submit ]
 .background-yellow  
 	background-color: #fffa0e
  
+.background-orange-red
+	background-color: $orange-red
+	
 .border-dashed-blue
 	@include border(1px, 1px, 1px, 1px, dashed, $dodger-blue)
  
@@ -309,9 +326,6 @@ input[ type=submit ]
 	width: 100%
 	margin: 0 auto 3%	
 	text-align: center
- 
-#people-design-studio-button-blue
-	@include people-design-studio-button-blue
 	
 #our-websites  
 	text-align: center
@@ -604,4 +618,36 @@ p#your-framework-and-your-servers
 	h2
 		font-size: 30px
 
-/* Styles For A Note */
+/* Styles For The Note Page */
+
+
+
+/* Styles for The First Blog Post */
+
+
+/* Styles for The Blog Section */
+#our-blog
+	.col-md-5
+		h1
+			padding: 27% 0
+	.col-md-7
+		h3
+			padding: 2% 4%
+			margin-bottom: 4%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,3 +1,14 @@
-%h3.copy-dodger-blue
-	These are your Notes.
-	=link_to "Sign Out", sign_out_path
+#notes
+	%h3.copy-dodger-blue.sit-center
+		Your Notes
+		- @notes.each do |objNote|
+			.row.margin-bottom-five-percent
+				.col-md-9
+					%h3.copy-orange-red.pull-left
+						= objNote.title
+					%h3.pull-right
+						= link_to "Edit this Note", edit_note_path(objNote)
+					%p.copy-navy-blue-sports.sit-bottom
+						= objNote.content
+						
+						

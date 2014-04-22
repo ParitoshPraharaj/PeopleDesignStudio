@@ -57,6 +57,10 @@ $orange: #ff3e00
 $navy-blue-sports: #0255FF
 
 $hollywood-cerise: #ff00B4
+
+$pale-cornflour-blue: #adc6ef
+
+$dodger-blue-second: #008aff
 /* Widths */
 
 $one-pixel: 1px
@@ -111,12 +115,12 @@ $two-pixels: 2px
 @mixin letter-spacing($pixel-width)
 	letter-spacing: $pixel-width
 
-@mixin people-design-studio-button-blue
-	background-color: $dodger-blue
-	color: $white
-	@include padding(0.5%, 2.5%, 0.5%, 2.5%)
-	@include border-radius(2px)
-	border: none
+@mixin button($color, $border-color)
+	#button-#{$border-color}
+		color: $color
+		@include padding(3%,3%,3%,3%)
+		@include border-radius(2px)
+		@include border(1px, 1px, 1px, 1px, solid, $border-color)
 
 @mixin people-design-studio-button-orange
 	background-color: $orange
@@ -133,18 +137,7 @@ $two-pixels: 2px
 	/* Padding */
 	@include padding(1% 2%)
 	vertical-align: middle
-	@include border(0px, 0px, 1px, 0px, dashed, $dodger-blue)	
-	
-@mixin input-form-submit
-	background: none
-	border: none	
-	display: block
-	margin: 0 auto
-	color: #eeec0f
-	font-size: 25px
-	font-weight: bold
-	letter-spacing: 1px
-	@include border(0px, 0px, 1px, 0px, solid, #4395fa)
+	@include border(0px, 0px, 1px, 0px, dashed, $dodger-blue)
 	
 @mixin input-placeholders
 	::-webkit-input-placeholder

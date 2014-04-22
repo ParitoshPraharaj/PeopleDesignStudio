@@ -34,8 +34,4 @@ class WebsitesController < ApplicationController
 	params.require(:website).permit(:people_name, :people_email, :website_name, :website_description)
   end
   
-  
-  
-  
-  
 end

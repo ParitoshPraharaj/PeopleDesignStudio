@@ -33,7 +33,10 @@ TheDesignStudio::Application.routes.draw do
   get "tasks/delete"
   get "photos_from_around_the_world/index"
   delete "sign_out", to: "worlds#sign_out"	
-    
+
+  get "blog/we-are-on-the-internet-our-very-first-lines", to: "blog#we_are_on_the_internet_our_very_first_lines"	
+
+  
   #Named Routes
 	
   get "lets-get-started", to: "websites#lets_get_started", as: "lets_get_started"

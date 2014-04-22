@@ -1,13 +1,13 @@
 #notes-form
 	=form_for :notes, url: notes_path do |objNote|
 		.row
-			.col-md-8
+			.col-md-8.margin-left-one-hundreds
 				=objNote.label :title, "Title of the Note.", class: "copy-medium-spring-green"
 				=objNote.text_field :title, placeholder: "Title of the Note", class: "controls", id: "note-title"
 		
 		.row
-			.col-md-8
+			.col-md-8.margin-left-one-hundreds
 				=objNote.label :content, "Body of the Note", class: "copy-orange-red"
 				=objNote.text_area :content,class: "controls",placeholder: "Start from here..."
 				
-		=objNote.submit 'Save Your Note'
+		=objNote.submit 'Save Your Note', id: 'button-pale-cornflour-blue'

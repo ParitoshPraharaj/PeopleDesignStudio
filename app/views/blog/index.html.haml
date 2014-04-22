@@ -1,2 +1,16 @@
-<h1>Blog#index</h1>
-<p>Find me in app/views/blog/index.html.erb</p>
+#our-blog
+	%h1.copy-navy-blue-sports.sit-center.margin_bottom_five_percent
+		Our Blog
+		
+		
+	- @posts.each do |a_blog_post|
+		.row
+			.col-md-5.background-golden-yellow
+				%h3.sit-center
+					#{ a_blog_post.title }
+			.col-md-7
+				%h3.copy-white.background-orange-red.margin-bottom-three-percent
+					#{a_blog_post.title}
+				
+				%p.copy-navy-blue-sports
+					#{a_blog_post.content}

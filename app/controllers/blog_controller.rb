@@ -1,4 +1,13 @@
 class BlogController < ApplicationController
+
+  def we_are_on_the_internet_our_very_first_lines
+	
+  end
+	
+  def index
+	@posts = Blog.all
+  end
+	
   def new
 	@blog = Blog.new
   end
