@@ -1,6 +1,6 @@
 #our-knowledge
 	.row
-		.col-md-8
+		.col-md-7
 			%h1.pull-left
 				!= link_to "#{ @blog.title } ", blog_path(@blog)
 				
@@ -12,8 +12,15 @@
 			%p.copy-navy-blue-sports
 				!= @blog.content
 				
-		.col-md-4.margin-top-four-percent
-			%h2
+			%h2.sit-center
+				%span.copy-navy-blue-sports Reach
+				out to us for a 
+				%span.copy-red Website.
+				Our
+				= mail_to "hello@peopledesignstudio.com", "Email", encode: "hex"
+				
+		.col-md-5.margin-top-four-percent
+			%h3
 				=link_to "Let Us Design Your Website", root_path, id: "button-dodger-blue-second"
 			%h3.sit-center.margin-top-ten-percent
 				We 
@@ -23,16 +30,4 @@
 				A
 				%span.copy-red Great
 
-				%span.copy-navy-blue-sports Website.		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+				%span.copy-navy-blue-sports Website.

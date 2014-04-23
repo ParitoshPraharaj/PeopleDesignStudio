@@ -23,6 +23,9 @@ gem 'sass-rails', '~> 4.0.0'
 # Bootstrap for CSS
 gem 'bootstrap-sass'
 
+# Gem for Protecting Email Id from Email Harvesters.
+gem 'actionview-encoded_mail_to'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
