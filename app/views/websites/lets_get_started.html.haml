@@ -15,7 +15,11 @@
 		%span.border-bottom-red
 		Get 
 		Started
-	.line_red				
+	.line_red
+	%p.sit-center
+		- flash.each do |name,msg|
+			!= msg			
+		
 	#the-design-studio-form
 		= form_for :website, url: websites_path do |objWebsite|
 			.form-group.thoughts_on_your_website_label
@@ -106,7 +110,7 @@
 						= objWebsite.text_field :website_name, class: "controls"						
 						
 			%h2.sit-center
-				= objWebsite.submit "Let's Begin Your Work", id: "button-blue"
+				= objWebsite.submit "Let's Begin Your Work", id: "button-dodger-blue-second"
 					
 	#your_website_its_us_now
 		%p

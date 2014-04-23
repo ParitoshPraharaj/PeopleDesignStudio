@@ -323,7 +323,7 @@ textarea.controls
 .circle  
 	width: 40px
 	height: 40px
-	border-radius: 100%
+	border-radius: 100% 
  
 .square  
 	width: 40px
@@ -484,8 +484,10 @@ h2 #lets_start
 	
 #the-design-studio-form input[type="submit"]
 	font-size: 26px
-	@include padding(1%, 3%, 1%, 3%)	
-	border: none
+	background-color: #fff
+	
+#the-design-studio-form input[type="submit"]:hover
+	color: $black	
 	
 #the-design-studio-form .form_group
 	margin-bottom: 2%

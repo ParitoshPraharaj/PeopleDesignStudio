@@ -11,7 +11,7 @@ class WebsitesController < ApplicationController
   end
 
   def lets_get_started
-	
+	@website = Website.new
   end
 
   def create
@@ -21,9 +21,20 @@ class WebsitesController < ApplicationController
 		redirect_to @website
 	else
         logger.info "Attributes did not got saved: @website.attributes.inspect"
-        render lets_get_started
+		flash.now[:alert] = "<p class='text-center margin-bottom-five-percent'><span class='border-deep-sky-blue'><span class='copy-medium-spring-green'> Hey,</span>
+		you
+		<span class='copy-red'>	missed</span>
+		out some parts while
+		<span class='copy-navy-blue-sports'> filling</span>
+		out the Form. We just need
+		<span class='copy-orange-red'> Your</span>
+		<span class='copy-navy-blue-sports'> Name,</span>
+		<span class='copy-red'> Email, </span>
+		and a few lines on your 
+		<span class='copy-red'> website.</span></span></p>"
+        render "lets_get_started"
 	end	
-  end
+  end 
   
   def show
 	@website = Website.find(params[:id])
@@ -35,3 +46,15 @@ class WebsitesController < ApplicationController
   end
   
 end
+
+
+
+
+
+
+
+
+
+
+
+
