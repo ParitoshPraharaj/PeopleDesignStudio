@@ -1,14 +1,34 @@
-#notes
-	%h3.copy-dodger-blue.sit-center
-		Your Notes
+#notes.margin-top-minus-one-percent
+	#navigation
+		%h2.pull-left
+			= link_to "Notes", notes_path
+		%h2.copy-dodger-blue.sit-center.pull-left.margin-left-four-hundreds
+			Your Notes
+				
+		%h3.pull-right.margin-right-five-percent
+			= link_to "Write a New Note", new_note_path, id: "button-dodger-blue-second"
+	
+	.row.sit-bottom.margin-top-five-percent
 		- @notes.each do |objNote|
-			.row.margin-bottom-five-percent
-				.col-md-9
-					%h3.copy-orange-red.pull-left
-						= objNote.title
-					%h3.pull-right
-						= link_to "Edit this Note", edit_note_path(objNote)
-					%p.copy-navy-blue-sports.sit-bottom
-						= objNote.content
-						
-						
+			.col-md-8.margin-left-one-hundred
+				%h3.copy-orange-red.pull-left.margin-bottom-five-percent
+					= objNote.title
+				%h3.pull-right.margin-bottom-five-percent
+					= link_to "Edit this Note", edit_note_path(objNote)
+				%p.copy-navy-blue-sports.sit-bottom.margin-bottom-five-percent
+					= objNote.content
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					

@@ -38,6 +38,13 @@ h3.better-spacing
 
 a#button-dodger-blue-second:hover
 	@include button-hover($black, $dodger-blue-second)	
+
+input[type="submit"]:hover
+	background-color: $white
+	color: $black
+	
+input[type="submit"]:hover
+	color: $black	
 	
 #people-design-studio-button-orange
 	@include people-design-studio-button-orange
@@ -89,8 +96,17 @@ div
 .margin-top-four-percent
 	@include margin(4%,0,0,0)
 	
+.margin-top-five-percent
+	@include margin(5%,0,0,0)
+	
 .margin-top-ten-percent
 	@include margin(10%,0,0,0)
+
+.margin-top-minus-one-percent
+	@include margin(-1%,0,0,0)	
+	
+.margin-top-minus-five-percent
+	@include margin(-5%,0,0,0)
 	
 /* Bottom Margins */
 .margin-bottom-two-percent
@@ -130,11 +146,12 @@ div
 
 .margin-left-thirty-seven-hundreds
 	margin-left: 37.666667%
-
-/* Negative Margins */
 	
 .margin_left_minus_six_hundreds
 	margin-left: -6%
+
+.margin-right-five-percent
+	@include margin(0,5%,0,0)
 	
 /* Alignment and Orientation Classes */
 
@@ -486,7 +503,7 @@ h2 #lets_start
 	font-size: 26px
 	background-color: #fff
 	
-#the-design-studio-form input[type="submit"]:hover
+input[type="submit"]:hover
 	color: $black	
 	
 #the-design-studio-form .form_group

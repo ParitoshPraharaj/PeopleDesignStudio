@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140420072713) do
+ActiveRecord::Schema.define(version: 20140424112713) do
 
   create_table "blogs", force: true do |t|
     t.text     "title"
@@ -68,6 +68,14 @@ ActiveRecord::Schema.define(version: 20140420072713) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "thank_you_email_messages", force: true do |t|
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "thank_you_email_messages", ["message"], name: "index_thank_you_email_messages_on_message"
 
   create_table "users", force: true do |t|
     t.text     "name"

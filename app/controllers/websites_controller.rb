@@ -18,6 +18,7 @@ class WebsitesController < ApplicationController
 	@website = Website.create(parameters_for_saving_the_website_form)
         logger.info "A Website Saved: @website.attributes.inspect"
 	if @website.save
+		ThankYouOnProjectSubmission.sent_a_thank_you_message_and_welcome_email(@website).deliver
 		redirect_to @website
 	else
         logger.info "Attributes did not got saved: @website.attributes.inspect"

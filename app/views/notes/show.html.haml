@@ -1,12 +1,19 @@
-#your-note	
+#your-note
+	#navigation
+		%h2.pull-left
+			= link_to "Notes", notes_path	
 	.row
-		.col-md-8
+		.col-md-8.margin-left-one-hundreds
 			%h3.copy-orange-red.margin-bottom-four-percent
 				#{ @note.title }
 				
 			%p.copy-navy-blue-sports
 				#{ @note.content }
-		.col-md-4
+		.col-md-3
+			%h2
+				= link_to "Write a New Note", new_note_path, id: "button-dodger-blue-second", class: "margin-top-minus-three-percent"
+			
+			
 			=link_to "Edit this Note", edit_note_path(@note)
 		
 		

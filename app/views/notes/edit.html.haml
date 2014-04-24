@@ -1,16 +1,22 @@
 #notes-form
+	#navigation
+		%h2.pull-left
+			= link_to "Notes", notes_path
+			
 	=form_for @note do |objNote|
 		.row
-			.col-md-8
+			.col-md-8.margin-left-one-hundred
 				=objNote.label :title, "Title of the Note.", class: "copy-medium-spring-green"
-				=objNote.text_field :title , class: "controls", id: "note-title"
-		
-		.row
-			.col-md-8
-				=objNote.label :content, "Body of the Note", class: "copy-orange-red"
-				=objNote.text_area :content, class: "controls"
+				=objNote.text_field :title , class: "controls margin-bottom-five-percent", id: "note-title"
 				
-		=objNote.submit 'Save Your Note'
+				=objNote.label :content, "Body of the Note", class: "copy-orange-red margin-bottom-five-percent"
+				=objNote.text_area :content, class: "controls margin-bottom-five-percent"
+				
+				=objNote.submit 'Save Your Note'
+			
+			.col-md-3
+				%h2
+					=link_to "Write a Note", new_note_path, id: "button-dodger-blue-second"
 		
 		
 		
