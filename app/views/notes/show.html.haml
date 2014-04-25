@@ -5,10 +5,10 @@
 	.row
 		.col-md-8.margin-left-one-hundreds
 			%h3.copy-orange-red.margin-bottom-four-percent
-				#{ @note.title }
+				!= @note.title
 				
 			%p.copy-navy-blue-sports
-				#{ @note.content }
+				!= @note.content
 		.col-md-3
 			%h2
 				= link_to "Write a New Note", new_note_path, id: "button-dodger-blue-second", class: "margin-top-minus-three-percent"
