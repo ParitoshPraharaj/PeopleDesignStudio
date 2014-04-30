@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 		@user = User.create(fields_for_signup)
 		logger.debug "A Person with an Email Id: #{@user.attributes.inspect} Signed Up. #{ @user.attributes.inspect }"
 		if @user.save
-			redirect_to new_note_path, notice: "%span.copy-medium-spring-green.text-bold Hey&#44;
+			redirect_to work_index_path, notice: "%span.copy-medium-spring-green.text-bold Hey&#44;
 				%span.copy-navy-blue-sports Welcome
 				to our
 				%span.copy-red.text-bold Design

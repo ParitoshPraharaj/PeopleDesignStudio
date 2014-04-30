@@ -5,6 +5,12 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
+gem 'rake'
+
+#Gem for Social Share Buttons
+
+gem 'shareable'
+
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'

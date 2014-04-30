@@ -1,12 +1,26 @@
 #lets-work-together
-	%h2.sit-center.copy-medium-spring-green
-		Hey, This is where we work.
-	%h3.sit-center.copy-navy-blue-sports 
-		You, just have to SIGN UP.	
+	%h2.sit-center
+		We
+		%span.copy-genoa Will
+		%span.copy-red Work 
+		%span.copy-golden-yellow Here...
+	%h3.sit-center.margin-bottom-five-percent
+		Let&rsquo;s 
+		%span.copy-red	Get
+		Started
+	%h3.sit-center
+		%span.copy-orange-red Hey:
+		%span.margin-left-two-percent 
+		%span.copy-red Do
+		use the 
+		%span.copy-navy-blue-sports Email
+		you used while 
+		%span.copy-medium-spring-green filling out the 
+		%span.copy-golden-yellow form.
 	.row#lets-start
 		.col-md-5
-			=render 'signup_form'
+			=render 'form'
 	-#- if @people.new_record?
-	%h3#password-no-show.sit-center.copy-navy-blue
+	-#%h3#password-no-show.sit-center.copy-navy-blue
 		We believe it&rsquo;s easier to remember passwords when you see it and type.
 		

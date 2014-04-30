@@ -11,6 +11,9 @@ a
 
 a:hover
 	@include link-hover
+
+a:visited
+	@include link
 	
 p
 	@include font-and-line-height(20px)
@@ -26,6 +29,9 @@ h1, h2, h3, h4, h5, h6
 .font-size-twenty-eight-pixels
 	font-size: 28px
 
+.font-size-fourty-two-pixels
+	font-size: 42px	
+	
 /* Letter Spacing  */
 h3.better-spacing
 	@include letter-spacing($one-pixel)	
@@ -38,12 +44,18 @@ h3.better-spacing
 
 a#button-dodger-blue-second:hover
 	@include button-hover($black, $dodger-blue-second)	
+	
+#button-black
+	color: $orange
+	@include padding(1%,2%,1%,2%)
+	@include border-radius(2px)
+	@include border(1px, 1px, 1px, 1px, solid, $black)
 
-input[type="submit"]:hover
+input[type="submit"]
 	background-color: $white
-	color: $black
 	
 input[type="submit"]:hover
+	background-color: $white
 	color: $black	
 	
 #people-design-studio-button-orange
@@ -61,6 +73,8 @@ div
 @include width(thirty-percent, 30%)
 
 @include width(seventy-percent, 70%)
+
+@include width(eighty-percent, 80%)
 	
 /* Twitter Bootstrap's Column Classes Re-Named */
 .margin-left-zero-hundred
@@ -124,13 +138,19 @@ div
 .margin-bottom-six-percent
 	margin-bottom: 6%
 	
+.margin-bottom-seven-percent
+	@include margin(0,0,7%,0)
+	
 .margin-bottom-ten-percent
 	margin-bottom: 10%
 	
 .margin-bottom-twenty-percent
 	margin-bottom: 20%
 
-/* Positive Margins */
+/* Left Margins */
+
+.margin-left-two-percent
+	margin-left: 2%
 
 .margin-left-eleven-hundreds
 	margin-left: 11%
@@ -282,7 +302,7 @@ textarea.controls
 .background-orange
 	background-color: $orange
 	
-.background-yellow  
+.background-yellow
 	background-color: #fffa0e
  
 .background-orange-red
@@ -296,12 +316,24 @@ textarea.controls
 	
 .background-vermillion
 	background-color: $vermillion	
+
+.background-jade
+	background-color: $jade
+
+.background-medium-spring-green
+	background-color: $medium-spring-green
 	
 .border-dashed-blue
 	@include border(1px, 1px, 1px, 1px, dashed, $dodger-blue)
  
 .border-bottom-dashed-blue
 	@include border(0px, 0px, 1px, 0px, dashed, $dodger-blue)
+	
+.border-bottom-navy-blue
+	@include border(0px, 0px, 2px, 0px, solid, $navy-blue)
+	
+.border-two-pixels-red
+	border-bottom: 2px solid #ff0000
 	
 .border-four-pixels-red  
 	border-bottom: 4px solid #ff0000
@@ -421,24 +453,35 @@ h2#we_make_business_personal_and_hobby_websites
 	margin: 0 0 4% 8.33% 
 	text-align: center
  
-#we_make_all_websites_box p  
+#we-make-all-websites-box p  
 	font-size: 23px
 	line-height: 34.5px
 	margin-left: 8.33% 
  
-#we_make_all_websites_box  
-	margin-bottom: 10%
+#we-make-all-websites-box  
+	margin-bottom: 6%
  
 #shapes  
 	margin-bottom: 9%
  
 h2#we_love_designing_copywriting_and_programming_websites
-	margin-bottom: 4%
+	margin-bottom: 2%
 
-#whats_happening_from_around_the_world
-	width: 80%
-	margin: 0 auto	
-
+#circle-direction
+	@include margin(0,0,4%,0)
+	
+#circle-direction span	
+	@include padding(0px, 20px, 0px, 14px)
+		
+#whats-happening-around-the-world
+	.background-red
+		height: 300px
+	.background-medium-spring-green
+		height: 300px
+	.col-md-5 h1
+		@include padding(5%,5%,5%,5%)
+		
+	
 /* CSS Rules for the Home Page */
 
 a
@@ -469,6 +512,8 @@ a
 		height: 60px
 		color: #0081ff
 		@include margin(0px, 0px, 2%, 0px)
+
+			
 		
 /* Styles for the Website Collection Page */
 #lets_get_started 
@@ -650,17 +695,18 @@ p#your-framework-and-your-servers
 		@include margin(0%, 0%, 4%, 0%)		
 	#lets-start
 		@include margin(0, 0, 4%, 33.33333333333334%)		
-		p span
-			@include border(0px, 0px, 2px, 0px, solid, #ff0000)
+		p
+			font-size: 24px
 		input
 			color: #0081ff
+			@include border(0px, 0px, 1px, 0px, dashed, $golden-yellow)
 		input:focus
 			@include border(0px, 0px, 1px, 0px, dashed, #ff4500)
 		input#worlds_password:focus
 			color: #ff0000
-	#password-no-show
-		width: 50%
-		margin: 0 auto
+		#password-no-show
+			width: 50%
+			margin: 0 auto	
 /* Styles for Login Page */
 #lets-start-again
 	h2
@@ -706,6 +752,7 @@ p#your-framework-and-your-servers
 		color: $orange-red
 		text-decoration: none
 		border-bottom: 2px solid $deep-sky-blue
+
 		
 
 

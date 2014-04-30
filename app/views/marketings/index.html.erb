@@ -1,0 +1,37 @@
+<h1>Listing marketings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Business name</th>
+      <th>Email</th>
+      <th>Phone number</th>
+      <th>Address</th>
+      <th>Url</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @marketings.each do |marketing| %>
+      <tr>
+        <td><%= marketing.Name %></td>
+        <td><%= marketing.Business_Name %></td>
+        <td><%= marketing.Email %></td>
+        <td><%= marketing.Phone_Number %></td>
+        <td><%= marketing.Address %></td>
+        <td><%= marketing.url %></td>
+        <td><%= link_to 'Show', marketing %></td>
+        <td><%= link_to 'Edit', edit_marketing_path(marketing) %></td>
+        <td><%= link_to 'Destroy', marketing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Marketing', new_marketing_path %>

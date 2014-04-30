@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @marketing.Name %>
+</p>
+
+<p>
+  <strong>Business name:</strong>
+  <%= @marketing.Business_Name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @marketing.Email %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @marketing.Phone_Number %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @marketing.Address %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @marketing.url %>
+</p>
+
+<%= link_to 'Edit', edit_marketing_path(@marketing) %> |
+<%= link_to 'Back', marketings_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424112713) do
+ActiveRecord::Schema.define(version: 20140429005018) do
 
   create_table "blogs", force: true do |t|
     t.text     "title"
@@ -20,7 +20,10 @@ ActiveRecord::Schema.define(version: 20140424112713) do
     t.integer  "people_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "slug"
   end
+
+  add_index "blogs", ["slug"], name: "index_blogs_on_slug"
 
   create_table "comments", force: true do |t|
     t.text     "opinion"
@@ -45,6 +48,17 @@ ActiveRecord::Schema.define(version: 20140424112713) do
     t.datetime "updated_at"
   end
 
+  create_table "marketings", force: true do |t|
+    t.text     "Name"
+    t.text     "Business_Name"
+    t.text     "Email"
+    t.text     "Phone_Number"
+    t.text     "Address"
+    t.text     "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "notes", force: true do |t|
     t.integer  "world_id"
     t.text     "title"
@@ -53,12 +67,16 @@ ActiveRecord::Schema.define(version: 20140424112713) do
     t.datetime "updated_at"
   end
 
-  create_table "people", force: true do |t|
+  create_table "person", force: true do |t|
     t.text     "name"
     t.text     "email"
-    t.text     "password_digest"
+    t.text     "password"
+    t.text     "image"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "table_people", force: true do |t|
   end
 
   create_table "tasks", force: true do |t|
@@ -91,6 +109,14 @@ ActiveRecord::Schema.define(version: 20140424112713) do
     t.string "people_email"
     t.string "website_description"
     t.string "website_name"
+  end
+
+  create_table "whats_happening_around_the_worlds", force: true do |t|
+    t.text     "title"
+    t.text     "description"
+    t.text     "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "works", force: true do |t|

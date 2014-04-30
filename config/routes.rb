@@ -1,5 +1,9 @@
 TheDesignStudio::Application.routes.draw do
  
+  resources :comments
+
+  resources :marketings
+
   get "users/new"
   get "users/create"
   get "users/edit"
@@ -41,7 +45,7 @@ TheDesignStudio::Application.routes.draw do
 	
   get "lets-get-started", to: "websites#lets_get_started", as: "lets_get_started"
   
-  get "lets-work-together", to: "users#new", as: 'lets_work_together'
+  get "lets-work-together", to: "people#new", as: 'lets_work_together'
   
   get 'lets-start-again', to: 'sessions#lets_start_again', as: 'lets_start_again'
   
@@ -66,6 +70,8 @@ TheDesignStudio::Application.routes.draw do
   resources :websites
   
   resources :blog
+  
+  resources :whats_happening_around_the_worlds
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

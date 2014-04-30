@@ -1,0 +1,2 @@
+module WhatsHappenningAcrossTheWorldHelper
+end

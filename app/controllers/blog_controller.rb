@@ -1,10 +1,6 @@
 class BlogController < ApplicationController
 
   respond_to :html, :json
-  
-  def we_are_on_the_internet_our_very_first_lines
-	
-  end
 	
   def index
 	@blogs = Blog.all
@@ -40,9 +36,10 @@ class BlogController < ApplicationController
 	end	
   end
 	
-	def show
-		@blog = Blog.find(params[:id])
-	end	
+  def show
+    @blog = Blog.find(params[:id])
+	respond_with(@blog)
+  end	
 
 	
   def index
@@ -66,9 +63,7 @@ class BlogController < ApplicationController
   
   def strong_parameters_method_for_saving_and_updating_blog_content
 	params.require(:blog).permit(:title, :content, :files)
-  end
-  
-  
+  end 
   
   
 end

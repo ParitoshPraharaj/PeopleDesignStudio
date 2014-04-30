@@ -1,0 +1,5 @@
+.row
+	.col-md-8.col-md-offset-2
+		=form_for :work, url: work_index_path, method: :post do |objWork|
+			=objWork.text_area :what, class: "controls"
+			=objWork.submit "Lets Start", class: "sit-center"

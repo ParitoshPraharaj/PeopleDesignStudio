@@ -3,8 +3,5 @@
 		%span.copy-blue Hey, welcome to the Design Studio.
 		%span.copy-orange-red We will work here. 
 		%span.copy-mountain-meadow Why don&rsquo;t you write your first line here:
-	.row
-		.col-md-8.col-md-offset-2
-			=form_for :work, url: work_index_path do |objWork|
-				=objWork.text_area :what, class: "controls"
-				=objWork.submit "Lets Start", class: "sit-center"		
+	
+	=render 'form'	

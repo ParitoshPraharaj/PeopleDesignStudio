@@ -16,7 +16,7 @@ class PeopleController < ApplicationController
 		@people = People.create(fields_for_signup)
 		logger.debug "A Person with an Email Id: #{@people.attributes.inspect} Signed Up. #{ @people.attributes.inspect }"
 		if @people.save
-			redirect_to new_note_path, notice: "%span.copy-medium-spring-green.text-bold Hey&#44;
+			redirect_to notes_path, notice: "%span.copy-medium-spring-green.text-bold Hey&#44;
 				%span.copy-navy-blue-sports Welcome
 				to our
 				%span.copy-red.text-bold Design
@@ -32,7 +32,7 @@ class PeopleController < ApplicationController
 				%span.copy-medium-spring-green.text-bold Here."
 				
 		else
-			flash.now.alert = "%span.copy-medium-spring-green.text-bold Hey&#44;
+			flash.now[:alert] = "%span.copy-medium-spring-green.text-bold Hey&#44;
 				either you have Signed Up with us&#44; or the 
 				%span.copy-deep-sky-blue.text-bold Email Id
 				you just
@@ -45,7 +45,7 @@ class PeopleController < ApplicationController
 				you could try your
 				%span.copy-orange-red.text-bold Secondary
 				Email Address."
-			render :lets_work_together
+			render :new
 		end	
 	end
 	
@@ -57,7 +57,7 @@ class PeopleController < ApplicationController
 	private
 	
 	def fields_for_signup
-		params.require(:people).permit(:email, :password_digest)
+		params.require(:people).permit(:email, :password)
 	end
 
 	
