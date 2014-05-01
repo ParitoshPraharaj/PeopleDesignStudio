@@ -1,0 +1,11 @@
+#marketing-email
+	.row
+		.col-md-7				
+			%h3.copy-red.margin-bottom-five-percent
+				!= @reach_out_to_customer.subject
+				
+			%p.copy-navy-blue-sports.margin-bottom-five-percent
+				!= @reach_out_to_customer.email
+			
+			%p.copy-orange-red.margin-bottom-five-percent
+				!= @reach_out_to_customer.to

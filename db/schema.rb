@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429005018) do
+ActiveRecord::Schema.define(version: 20140501004924) do
 
   create_table "blogs", force: true do |t|
     t.text     "title"
@@ -25,14 +25,18 @@ ActiveRecord::Schema.define(version: 20140429005018) do
 
   add_index "blogs", ["slug"], name: "index_blogs_on_slug"
 
-  create_table "comments", force: true do |t|
-    t.text     "opinion"
-    t.integer  "blog_id"
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
     t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
-  add_index "comments", ["blog_id"], name: "index_comments_on_blog_id"
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "ideas", force: true do |t|
     t.integer  "People_Id"
@@ -74,6 +78,15 @@ ActiveRecord::Schema.define(version: 20140429005018) do
     t.text     "image"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "reach_out_to_customers", force: true do |t|
+    t.text     "to"
+    t.text     "email"
+    t.text     "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "subject"
   end
 
   create_table "table_people", force: true do |t|

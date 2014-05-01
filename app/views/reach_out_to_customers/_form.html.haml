@@ -1,0 +1,18 @@
+=form_for @reach_out_to_customer do |objReachOutToCustomer|
+	.row
+		.col-md-8
+			.form-group
+				=objReachOutToCustomer.label :to, "To", class: 'copy-navy-blue-sports'
+				=objReachOutToCustomer.text_field :to, class: "controls", placeholder: "The Person you are sending email to ..."
+	.row
+		.col-md-8
+			.form-group
+				=objReachOutToCustomer.label :subject, "Subject", class: 'copy-navy-blue-sports'
+				=objReachOutToCustomer.text_field :subject, class: "controls", placeholder: "The Subject goes here..."			
+	.row
+		.col-md-8
+			.form-group
+				=objReachOutToCustomer.label :email, "Body", class: "copy-navy-blue-sports"
+				=objReachOutToCustomer.text_area :email, class: "controls", placeholder: "Body goes here ..."
+		
+	=objReachOutToCustomer.submit 'It is Done', id: 'button-pale-cornflour-blue', class: 'margin-left-four-hundreds'

@@ -1,0 +1,31 @@
+<h1>Listing reach_out_to_customers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>To</th>
+      <th>Email</th>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reach_out_to_customers.each do |reach_out_to_customer| %>
+      <tr>
+        <td><%= reach_out_to_customer.to %></td>
+        <td><%= reach_out_to_customer.email %></td>
+        <td><%= reach_out_to_customer.image %></td>
+        <td><%= link_to 'Show', reach_out_to_customer %></td>
+        <td><%= link_to 'Edit', edit_reach_out_to_customer_path(reach_out_to_customer) %></td>
+        <td><%= link_to 'Destroy', reach_out_to_customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reach out to customer', new_reach_out_to_customer_path %>

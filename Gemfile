@@ -11,6 +11,9 @@ gem 'rake'
 
 gem 'shareable'
 
+# Gem for Good URLs
+gem 'friendly_id', '~>5.0.0'
+
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'
