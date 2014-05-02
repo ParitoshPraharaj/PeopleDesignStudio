@@ -2,7 +2,7 @@ class Comment < ActiveRecord::Base
 	belongs_to :blog
 	before_create :downcapitalize_name
 		
-	validates :name, :content, presence: true
+	validates :name, :comment, presence: true
 	
 	protected
 	
