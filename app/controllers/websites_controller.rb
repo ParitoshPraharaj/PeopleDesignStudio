@@ -7,7 +7,7 @@ class WebsitesController < ApplicationController
   end
 
   def index
-      @websites = Website.order(id: :desc).limit(3)
+      @websites = Website.all
   end
 
   def lets_get_started
