@@ -2,7 +2,7 @@ class Note < ActiveRecord::Base
 	
 	validates :title, :content, presence: true
 	
-	extends FriendlyId
+	extend FriendlyId
 	friendly_id :title, use: :slugged
 	
 end
