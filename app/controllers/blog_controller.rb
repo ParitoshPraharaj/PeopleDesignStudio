@@ -47,7 +47,7 @@ class BlogController < ApplicationController
   end
 
   def edit
-	@blog = Blog.find(params[:id])
+	@blog = Blog.friendly.find(params[:id])
   end
 
   def update

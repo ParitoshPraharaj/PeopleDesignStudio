@@ -1,9 +1,8 @@
 class Note < ActiveRecord::Base
-		
-	def titles_in_urls
-		title.downcase.gsub(" ","-")
-	end
 	
+	vaidates :title, :content, presence: true
 	
+	extends FriendlyId
+	friendly_id :title, use: :slugged
 	
 end

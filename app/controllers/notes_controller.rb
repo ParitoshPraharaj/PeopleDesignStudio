@@ -26,7 +26,7 @@ class NotesController < ApplicationController
   end
 
   def edit
-	@note = Note.find(params[:id])
+	@note = Note.friendly.find(params[:id])
   end
 
   def update
@@ -41,7 +41,7 @@ class NotesController < ApplicationController
   end
 
   def show
-	@note = Note.find(params[:id])
+	@note = Note.friendly.find(params[:id])
 	respond_with(@note)
   end
 
