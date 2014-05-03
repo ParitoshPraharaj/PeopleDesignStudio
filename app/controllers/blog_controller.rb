@@ -1,10 +1,10 @@
 class BlogController < ApplicationController
 
   respond_to :html, :json
-	
+  
   def index
-	@blogs = Blog.all
-	respond_with(@blogs)
+	@posts = Blog.order(created_at: :desc)
+	respond_with(@posts)
   end
 	
   def new
