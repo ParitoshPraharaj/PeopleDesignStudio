@@ -30,7 +30,7 @@ class NotesController < ApplicationController
   end
 
   def update
-	@note = Note.find(params[:id])
+	@note = Note.friendly.find(params[:id])
 	if @note.update(fields_for_creating_a_note)
 		flash[:message] = 'Hey, you added a few lines to your Note.'
 		redirect_to @note
@@ -46,7 +46,7 @@ class NotesController < ApplicationController
   end
 
   def delete
-	@note = Note.find(params[:title])
+	@note = Note.friendly.find(params[:title])
 	@note.destroy
   end
   

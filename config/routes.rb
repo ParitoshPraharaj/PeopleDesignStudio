@@ -1,11 +1,5 @@
 TheDesignStudio::Application.routes.draw do
  
-  resources :reach_out_to_customers
-
-  resources :comments
-
-  resources :marketings
-
   get "users/new"
   get "users/create"
   get "users/edit"
@@ -76,7 +70,10 @@ TheDesignStudio::Application.routes.draw do
   resources :whats_happening_around_the_worlds
   
   resources :marketings
-  
+ 
+  resources :reach_out_to_customers
+
+  resources :comments
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

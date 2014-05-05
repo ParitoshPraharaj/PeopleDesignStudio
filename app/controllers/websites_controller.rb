@@ -39,6 +39,7 @@ class WebsitesController < ApplicationController
   
   def show
 	@website = Website.find(params[:id])
+	@recent_posts = Blog.order(created_at: :desc).limit(2)
 	respond_with(@website)	
   end
   

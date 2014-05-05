@@ -58,28 +58,27 @@
 		for our
 		%span.copy-red Welcome
 		%span.copy-medium-spring-green Email.
-		
-	.line-red
-		//Hope you check our Around the World page &#49; //where we share photographs of the worlds most //inspiring, motivating and thought-provoking //moments. And &#49; our What&#rquo;s Happening //Around the World section on the Home Page, where //we share yesterday&rquo;s most happening News //stories.
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
+	#circle-direction
+		.circle.background-jade
+			%span.copy-white
+				&darr;
+	
+	#from-our-blog
+		%h3.sit-center.margin-bottom-five-percent
+			From Our Blog
+		.row
+			- @recentPosts.each do |objRecentPost|
+				.col-md-5.margin-left-two-hundreds
+					=link_to objRecentPost do
+						.background-yellow
+							%h2.copy-navy-blue-sports
+								=objRecentPost.title
+					=link_to "Read More", objRecentPost
+				.col-md-5
+					=link_to objRecentPost do
+						.background-red
+							%h2.copy-white
+								=objRecentPost.title
+					=link_to "Read More", objRecentPost
 		

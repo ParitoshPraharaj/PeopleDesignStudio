@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140502054447) do
+ActiveRecord::Schema.define(version: 20140505041035) do
 
   create_table "blogs", force: true do |t|
     t.text     "title"
@@ -78,7 +78,10 @@ ActiveRecord::Schema.define(version: 20140502054447) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "slug"
   end
+
+  add_index "notes", ["slug"], name: "index_notes_on_slug", unique: true
 
   create_table "reach_out_to_customers", force: true do |t|
     t.text     "to"

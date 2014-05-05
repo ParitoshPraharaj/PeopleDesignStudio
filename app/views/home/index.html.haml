@@ -116,6 +116,20 @@
 			%span.copy-white
 				&darr;
 	
+	#from-our-blog
+		%h1.sit-center.margin-bottom-ten-percent
+			From Our Blog
+		.row
+			.col-md-2
+			
+		- @blog.each do |objSinglePost|
+			.col-md-5
+				=link_to objSinglePost do
+					.background-yellow
+						%h2.copy-navy-blue-sports
+							We Are On The Internet - Our Very First Lines
+				=link_to "Read More", objSinglePost
+	
 	#whats-happening-around-the-world
 		%h1.font-size-fourty-two-pixels.sit-center.margin-bottom-five-percent
 			%span.copy-red What&rsquo;s 
